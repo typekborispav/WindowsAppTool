@@ -1,0 +1,192 @@
+﻿[2025-04-15 08:55:55] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 08:55:55] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 08:55:55] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 08:55:55] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 08:55:56] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 08:55:56] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 08:55:56] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 08:55:56] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 08:56:00] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 08:56:16] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 08:56:16] [INFO] Zahajena funkce Install-BasicApps.
+[2025-04-15 08:56:16] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 08:56:27] [WARN] Uzivatel nevybral zadne aplikace nebo zavrel okno.
+[2025-04-15 09:03:12] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 09:03:12] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 09:03:12] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 09:03:12] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 09:03:13] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 09:03:13] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 09:03:13] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 09:03:13] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 09:03:18] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 09:03:22] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 09:03:22] [INFO] Zahajena funkce Uninstall-Bloatware.
+[2025-04-15 09:03:23] [DEBUG] Cekam na specificke potvrzeni: 'Pro potvrzeni odinstalace napiste 'ANO' (VyĹľadovĂˇno: 'ANO')'
+[2025-04-15 09:03:42] [DEBUG] Uzivatel zadal: 'n'
+[2025-04-15 09:03:42] [WARN] Potvrzeni 'ANO' NEBYLO zadano spravne.
+[2025-04-15 09:03:42] [INFO] Odinstalace bloatware zrusena uzivatelem.
+[2025-04-15 09:03:48] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 09:03:48] [INFO] Zahajena funkce Uninstall-Bloatware.
+[2025-04-15 09:03:48] [DEBUG] Cekam na specificke potvrzeni: 'Pro potvrzeni odinstalace napiste 'ANO' (VyĹľadovĂˇno: 'ANO')'
+[2025-04-15 10:04:44] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 10:04:44] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 10:04:44] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 10:04:44] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 10:04:45] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 10:04:45] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 10:04:45] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 10:04:45] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 10:04:51] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 10:04:59] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:04:59] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:04:59] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:05:11] [INFO] Uzivatel zrusil vyber v okne (Storno nebo zavreni).
+[2025-04-15 10:05:11] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 10:05:53] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 10:05:53] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 10:05:53] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 10:05:53] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 10:05:54] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 10:05:54] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 10:05:54] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 10:05:54] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 10:06:01] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 10:06:05] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:06:05] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:06:05] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:06:22] [INFO] Uzivatel zrusil vyber v okne (Storno nebo zavreni).
+[2025-04-15 10:06:22] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 10:07:04] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 10:07:04] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 10:07:04] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 10:07:04] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 10:07:05] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 10:07:05] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 10:07:06] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 10:07:06] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 10:07:12] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 10:07:18] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:07:18] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:07:18] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:07:32] [INFO] Uzivatel zrusil vyber v okne (Storno nebo zavreni).
+[2025-04-15 10:07:32] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 10:08:06] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:08:06] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:08:06] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:09:21] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 10:09:21] [WARN] Uzivatel potvrdil OK, ale nevybral zadne aplikace.
+[2025-04-15 10:09:21] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 10:09:47] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:09:48] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:09:48] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:09:58] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 10:09:58] [WARN] Uzivatel potvrdil OK, ale nevybral zadne aplikace.
+[2025-04-15 10:09:58] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 10:10:21] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:10:21] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:10:21] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:10:27] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 10:10:27] [INFO] Uzivatel vybral aplikace: Epic Games Launcher, Ubisoft Connect
+[2025-04-15 10:10:27] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete pokracovat v instalaci techto vybranych aplikaci? (A/N)'
+[2025-04-15 10:10:35] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-15 10:10:35] [INFO] Instalace vybranych aplikaci zrusena uzivatelem po vyberu.
+[2025-04-15 10:10:39] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:10:39] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:10:39] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:11:04] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 10:11:04] [INFO] Uzivatel vybral aplikace: Google Chrome, 7-Zip, Discord, MSI Afterburner, HWMonitor, WinRAR
+[2025-04-15 10:11:04] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete pokracovat v instalaci techto vybranych aplikaci? (A/N)'
+[2025-04-15 10:11:12] [DEBUG] Uzivatel odpovedel: 'n'
+[2025-04-15 10:11:12] [INFO] Instalace vybranych aplikaci zrusena uzivatelem po vyberu.
+[2025-04-15 10:11:17] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:11:17] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:11:17] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:11:20] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 10:11:20] [WARN] Uzivatel potvrdil OK, ale nevybral zadne aplikace.
+[2025-04-15 10:11:20] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 10:11:25] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 10:11:25] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 10:11:25] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 10:11:27] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 10:11:27] [INFO] Uzivatel vybral aplikace: HWMonitor, WinRAR
+[2025-04-15 10:11:28] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete pokracovat v instalaci techto vybranych aplikaci? (A/N)'
+[2025-04-15 10:11:31] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-15 10:11:31] [INFO] Instalace vybranych aplikaci zrusena uzivatelem po vyberu.
+[2025-04-15 11:38:32] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 11:38:32] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 11:38:32] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 11:38:32] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 11:38:33] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 11:38:33] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 11:38:34] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 11:38:34] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 11:38:41] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 11:38:46] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 11:38:46] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 11:38:46] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 11:38:58] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 11:38:58] [WARN] Uzivatel potvrdil OK, ale nevybral zadne aplikace.
+[2025-04-15 11:38:58] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 11:49:11] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 11:49:11] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 11:49:11] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 11:49:12] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 11:49:13] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 11:49:13] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 11:49:13] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 11:49:13] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 11:49:20] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 11:49:23] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 11:49:23] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 11:49:23] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 11:49:27] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 11:49:27] [INFO] Uzivatel vybral aplikace: 7-Zip
+[2025-04-15 11:49:27] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete pokracovat v instalaci techto vybranych aplikaci? (A/N)'
+[2025-04-15 11:49:30] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-15 11:49:30] [INFO] Instalace vybranych aplikaci zrusena uzivatelem po vyberu.
+[2025-04-15 11:49:37] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 11:49:37] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 11:49:37] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 11:49:41] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 11:49:41] [INFO] Uzivatel vybral aplikace: GOG Galaxy
+[2025-04-15 11:49:41] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete pokracovat v instalaci techto vybranych aplikaci? (A/N)'
+[2025-04-15 11:49:45] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-15 11:49:45] [INFO] Instalace vybranych aplikaci zrusena uzivatelem po vyberu.
+[2025-04-15 11:50:21] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-15 11:50:21] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-15 11:50:21] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-15 11:50:23] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-15 11:50:23] [WARN] Uzivatel potvrdil OK, ale nevybral zadne aplikace.
+[2025-04-15 11:50:23] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-15 11:50:35] [INFO] Uzivatel zvolil v menu moznost: 2
+[2025-04-15 11:50:35] [INFO] Zahajena funkce Update-AllApps.
+[2025-04-15 11:50:35] [INFO] Spoustim proces: 'winget' s argumenty 'upgrade --all --accept-package-agreements --accept-source-agreements --disable-interactivity --verbose' pro akci 'Aktualizace vsech aplikaci'
+[2025-04-15 11:50:35] [INFO] Provadim akci: Aktualizace vsech aplikaci...
+[2025-04-15 11:50:43] [INFO] Aktualizace vsech aplikaci: Proces uspesne dokoncen (Kod 0).
+[2025-04-15 11:50:43] [INFO] Dokoncen pokus o aktualizaci vsech aplikaci.
+[2025-04-15 11:50:44] [INFO] Ukoncena funkce Update-AllApps.
+[2025-04-15 11:51:06] [INFO] Uzivatel zvolil v menu moznost: 8
+[2025-04-15 11:51:06] [INFO] Uzivatel zvolil konec skriptu. Ukoncuji.
+[2025-04-15 11:56:36] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 11:56:36] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 11:56:36] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 11:56:36] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 11:56:37] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 11:56:37] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 11:56:38] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 11:56:38] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 11:56:45] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 11:56:50] [INFO] Uzivatel zvolil v menu moznost: 8
+[2025-04-15 11:56:50] [INFO] Uzivatel zvolil konec skriptu. Ukoncuji.
+[2025-04-15 12:01:17] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 12:01:17] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 12:01:17] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 12:01:17] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 12:01:19] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 12:01:19] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 12:01:19] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 12:01:19] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 12:01:26] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 12:01:30] [INFO] Uzivatel zvolil v menu moznost: 8
+[2025-04-15 12:01:30] [INFO] Uzivatel zvolil konec skriptu. Ukoncuji.
