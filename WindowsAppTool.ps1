@@ -446,17 +446,19 @@ function Uninstall-Bloatware {
         $okButton = New-Object System.Windows.Forms.Button
         $okButton.Text = "Odinstalovat vybrané"
         $okButton.Anchor = [System.Windows.Forms.AnchorStyles]::Right
-        $okButton.Size = New-Object System.Drawing.Size(150, 30)
-        $okButton.Location = New-Object System.Drawing.Point($form.ClientSize.Width - $okButton.Width - $cancelButton.Width - 20, 5)
+        $okButton.Size = New-Object System.Drawing.Size(150, 30)     # Nastavit Velikost
         $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
-        $form.AcceptButton = $okButton
 
         $cancelButton = New-Object System.Windows.Forms.Button
         $cancelButton.Text = "Storno"
         $cancelButton.Anchor = [System.Windows.Forms.AnchorStyles]::Right
-        $cancelButton.Size = New-Object System.Drawing.Size(75, 30)
+        $cancelButton.Size = New-Object System.Drawing.Size(75, 30)      # Nastavit Velikost
+        $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]
+
+        $okButton.Location = New-Object System.Drawing.Point($form.ClientSize.Width - $okButton.Width - $cancelButton.Width - 20, 5)
         $cancelButton.Location = New-Object System.Drawing.Point($form.ClientSize.Width - $cancelButton.Width - 10, 5)
-        $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+
+        $form.AcceptButton = $okButton
         $form.CancelButton = $cancelButton
 
         $buttonPanel.Controls.Add($okButton)
