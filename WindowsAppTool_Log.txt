@@ -135,3 +135,67 @@
 [2025-04-15 17:43:29] [ERROR] Chyba pri vytvareni/zpracovani okna pro vyber bloatware: Method invocation failed because [System.Object[]] does not contain a method named 'op_Subtraction'.
 [2025-04-15 17:43:29] [ERROR] 
 ! NEOÄŚEKAVANA CHYBA SKRIPTU: DoĹˇlo k chybÄ› pĹ™i prĂˇci s oknem pro vĂ˝bÄ›r aplikacĂ­: Method invocation failed because [System.Object[]] does not contain a method named 'op_Subtraction'. | Cil:  | Radek: 825
+[2025-04-15 17:53:06] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 17:53:06] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 17:53:06] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 17:53:06] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 17:53:07] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 17:53:07] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 17:53:07] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 17:53:07] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 17:53:13] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 17:53:16] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 17:53:16] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, cz nazvy).
+[2025-04-15 17:53:16] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, cz nazvy).
+[2025-04-15 17:53:16] [ERROR] Chyba pri vytvareni/zpracovani okna pro vyber bloatware: Exception setting "DialogResult": "Cannot convert the "System.Windows.Forms.DialogResult" value of type "System.RuntimeType" to type "System.Windows.Forms.DialogResult"."
+[2025-04-15 17:53:17] [ERROR] 
+! NEOÄŚEKAVANA CHYBA SKRIPTU: DoĹˇlo k chybÄ› pĹ™i prĂˇci s oknem pro vĂ˝bÄ›r aplikacĂ­: Exception setting "DialogResult": "Cannot convert the "System.Windows.Forms.DialogResult" value of type "System.RuntimeType" to type "System.Windows.Forms.DialogResult"." | Cil:  | Radek: 827
+[2025-04-15 17:56:36] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 17:56:36] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 17:56:36] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 17:56:36] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 17:56:37] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 17:56:37] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 17:56:37] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 17:56:37] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 17:56:43] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 17:56:50] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 17:56:50] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, cz nazvy).
+[2025-04-15 17:56:50] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, cz nazvy).
+[2025-04-15 17:56:50] [ERROR] Chyba pri vytvareni/zpracovani okna pro vyber bloatware: Method invocation failed because [System.Object[]] does not contain a method named 'op_Subtraction'.
+[2025-04-15 17:56:50] [ERROR] 
+! NEOÄŚEKAVANA CHYBA SKRIPTU: DoĹˇlo k chybÄ› pĹ™i prĂˇci s oknem pro vĂ˝bÄ›r aplikacĂ­: Method invocation failed because [System.Object[]] does not contain a method named 'op_Subtraction'. | Cil:  | Radek: 835
+[2025-04-15 18:03:47] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 18:03:47] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 18:03:47] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 18:03:47] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 18:03:48] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 18:03:48] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 18:03:48] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 18:03:48] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 18:03:54] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 18:03:57] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 18:03:57] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, cz nazvy, FlowLayout).
+[2025-04-15 18:03:57] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, cz nazvy).
+[2025-04-15 18:04:31] [INFO] Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni).
+[2025-04-15 18:04:31] [WARN] Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena.
+[2025-04-15 18:08:32] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 18:08:32] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 18:08:32] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 18:08:32] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 18:08:33] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 18:08:33] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 18:08:34] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 18:08:34] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 18:08:40] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 18:08:43] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 18:08:43] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-15 18:08:43] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-15 18:08:53] [INFO] Uzivatel potvrdil vyber aplikaci k odinstalaci.
+[2025-04-15 18:08:53] [DEBUG] Cekam na potvrzeni uzivatele: 'OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci? (A/N)'
+[2025-04-15 18:08:56] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-15 18:08:56] [INFO] Zahajeni odinstalace vybranych aplikaci Windows.
+[2025-04-15 18:08:56] [INFO] Pokus o odinstalaci 'Test rychlosti site' (vzor: 'Microsoft.NetworkSpeedTest').
+[2025-04-15 18:08:56] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Test rychlosti site' (vzor 'Microsoft.NetworkSpeedTest').
+[2025-04-15 18:08:56] [INFO] Odinstalace vybranych aplikaci Windows dokoncena.
+[2025-04-15 18:08:56] [INFO] Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
