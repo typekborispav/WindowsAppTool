@@ -118,9 +118,12 @@ function Install-BasicApps {
         [PSCustomObject]@{Poc=22; Nazev="Discord";                   ID="Discord.Discord"}
         [PSCustomObject]@{Poc=23; Nazev="FanControl";                ID="Rem0o.FanControl"}
         [PSCustomObject]@{Poc=24; Nazev="MSI Afterburner";           ID="MSI.Afterburner"}
-        [PSCustomObject]@{Poc=25; Nazev="RivaTuner Statistics Server"; ID="RivaTuner.RTSS"}
+        [PSCustomObject]@{Poc=25; Nazev="RivaTuner";                 ID="RivaTuner.RTSS"}
         [PSCustomObject]@{Poc=26; Nazev="HWMonitor";                 ID="CPUID.HWMonitor"}
         [PSCustomObject]@{Poc=27; Nazev="WinRAR";                    ID="RARLab.WinRAR"}
+        [PSCustomObject]@{Poc=28; Nazev="PrusaSlicer";               ID="Prusa3D.PrusaSlicer"}
+        [PSCustomObject]@{Poc=29; Nazev="Bambu Studio";              ID="Bambulab.Bambustudio"}
+        [PSCustomObject]@{Poc=30; Nazev="Arduino IDE";               ID="ArduinoSA.IDE.stable"}
     ) | Sort-Object Poc
     Write-Log "Pripraven seznam aplikaci k vyberu." "DEBUG" -NoConsole
 
