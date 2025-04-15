@@ -300,49 +300,293 @@ function Update-Winget {
 
 # Funkce pro odinstalaci Bloatware (BEZ Edge)
 function Uninstall-Bloatware {
-    Clear-Host; Write-Log "Zahajena funkce Uninstall-Bloatware." "INFO" -NoConsole
-    Write-Host "============================================================" -ForegroundColor Yellow; Write-Host "   Odinstalace predinstalovanych aplikaci Windows" -ForegroundColor Yellow; Write-Host "============================================================" -ForegroundColor Yellow
-    Write-Host ""; Write-Host "  /!\\   V A R O V A N I   /!\\" -ForegroundColor Red; Write-Host "  Tato funkce se pokusi odstranit nektere standardni aplikace Windows." -ForegroundColor Red
-    Write-Host "  Odstraneni muze ovlivnit jine funkce systemu a je obtizne vratne!" -ForegroundColor Red; Write-Host "  Microsoft Edge NEBUDE odstranen touto volbou." -ForegroundColor Red; Write-Host ""
-    $bloatAppList = @(
-        [PSCustomObject]@{ Name = "Microsoft Teams"; Pattern = "*MicrosoftTeams*" } 
-        [PSCustomObject]@{ Name = "OneDrive (Appx)"; Pattern = "*OneDrive*" }
-        [PSCustomObject]@{ Name = "Ziskat Napovedu"; Pattern = "*GetHelp*" } 
-        [PSCustomObject]@{ Name = "Zaciname (Get Started)"; Pattern = "*GetStarted*" }
-        [PSCustomObject]@{ Name = "Pocasi"; Pattern = "*BingWeather*" } 
-        [PSCustomObject]@{ Name = "Zpravy"; Pattern = "*BingNews*" }
-        [PSCustomObject]@{ Name = "Mapy"; Pattern = "*WindowsMaps*" } 
-        [PSCustomObject]@{ Name = "Posta a Kalendar"; Pattern = "*windowscommunicationsapps*" }
-        [PSCustomObject]@{ Name = "Lide (Kontakty)"; Pattern = "*People*" } 
-        [PSCustomObject]@{ Name = "Vas telefon / Propojeni"; Pattern = "*YourPhone*" }
-        [PSCustomObject]@{ Name = "Microsoft Solitaire Collection";Pattern = "*MicrosoftSolitaireCollection*" } 
-        [PSCustomObject]@{ Name = "Centrum Office (My Office)"; Pattern = "*MicrosoftOfficeHub*" }
-        [PSCustomObject]@{ Name = "Centrum Feedback"; Pattern = "*WindowsFeedbackHub*" } 
-        [PSCustomObject]@{ Name = "Mixed Reality Portal"; Pattern = "*MixedReality.Portal*" }
-        [PSCustomObject]@{ Name = "Skype (verze z Appx)"; Pattern = "*SkypeApp*" } 
-        [PSCustomObject]@{ Name = "Rychle poznamky (Sticky Notes)";Pattern = "*MicrosoftStickyNotes*" }
-        [PSCustomObject]@{ Name = "Widgety (Web Experience Pack)"; Pattern = "*WebExperienceHost*" }
-    )
-    Write-Host "Nasledujici skupiny aplikaci se skript pokusi odstranit (dle vzoru):"
-    $bloatAppList | ForEach-Object { Write-Host "  - $($_.Name) (Vzor: '$($_.Pattern)')" }
+    Clear-Host; Write-Log "Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, cz nazvy)." "INFO" -NoConsole
+    Write-Host "============================================================" -ForegroundColor Yellow
+    Write-Host "   Odinstalace vybranych aplikaci Windows (Vyber ze seznamu)" -ForegroundColor Yellow
+    Write-Host "============================================================" -ForegroundColor Yellow
     Write-Host ""
-    if (-not (Get-SpecificConfirmation "Pro potvrzeni odinstalace napiste 'ANO'" "ANO")) { Write-Log "Odinstalace bloatware zrusena uzivatelem." "INFO"; Write-Host "Odinstalace zrusena uzivatelem."; return }
-    Write-Log "Zahajeni odinstalace bloatware." "INFO" -NoConsole; Write-Host "`nSpoustim odinstalaci standardnich aplikaci pomoci PowerShell..."; Write-Host "Pripadne chyby (aplikace nenalezena, nelze odebrat) budou ignorovany..."
-    foreach ($appToRemove in $bloatAppList) {
-        $pattern = $appToRemove.Pattern; $appName = $appToRemove.Name; Write-Host "----------------------------------------------"
-        Write-Log "Pokus o odinstalaci '$appName' (vzor: '$pattern')." "INFO" -NoConsole; Write-Host "Pokousim se odinstalovat: $appName (vzor: '$pattern')..."
-        $packageRemoved = $false; try {
-            $packages = Get-AppxPackage -AllUsers | Where-Object { $_.Name -like $pattern -or $_.PackageFullName -like $pattern }
+    Write-Host " /!\\ V A R O V A N I /!\\" -ForegroundColor Red -BackgroundColor Black
+    Write-Host " TATO FUNKCE UMOZNUJE ODINSTALOVAT SIROKOU SKALU APLIKACI," -ForegroundColor Red
+    Write-Host " VCETNE STANDARDNICH SOUCASTI WINDOWS A POTENCIALNE DULEZITYCH KOMPONENT." -ForegroundColor Red
+    Write-Host " PECLIVE ZVAZTE KAZDOU POLOZKU, NEZ JI ZASKRTNETE K ODSTRANENI!" -ForegroundColor Red
+    Write-Host " Odstraneni muze ovlivnit jine funkce systemu a je obtizne vratne!" -ForegroundColor Red
+    Write-Host " Microsoft Edge NEBUDE odstranen touto volbou." -ForegroundColor Red
+    Write-Host ""
+
+    # Aktualizovany seznam aplikaci podle vaseho zadani, s ceskymi nazvy
+    # POZN: 'Pattern' je zde obvykle PackageFamilyName nebo podobny identifikator.
+    #       Rizikove polozky oznaceny komentarem.
+    $availableBloatware = @(
+        [PSCustomObject]@{ Nazev = "3D Builder"; Pattern = "Microsoft.3DBuilder" }
+        [PSCustomObject]@{ Nazev = "ACG Media Player"; Pattern = "ACGMediaPlayer" }
+        [PSCustomObject]@{ Nazev = "Actipro Software LLC"; Pattern = "ActiproSoftwareLLC" } # Nejspis komponenta jine appky
+        [PSCustomObject]@{ Nazev = "Adobe Photoshop Express"; Pattern = "AdobeSystemsIncorporated.AdobePhotoshopExpress" }
+        [PSCustomObject]@{ Nazev = "Amazon (Aplikace)"; Pattern = "Amazon.com.Amazon" }
+        [PSCustomObject]@{ Nazev = "Amazon Prime Video"; Pattern = "AmazonVideo.PrimeVideo" }
+        [PSCustomObject]@{ Nazev = "Asphalt 8: Airborne"; Pattern = "Asphalt8Airborne" }
+        [PSCustomObject]@{ Nazev = "Autodesk SketchBook"; Pattern = "AutodeskSketchBook" }
+        [PSCustomObject]@{ Nazev = "Bubble Witch 3 Saga"; Pattern = "king.com.BubbleWitch3Saga" }
+        [PSCustomObject]@{ Nazev = "Budík a hodiny"; Pattern = "Microsoft.WindowsAlarms" } # Soucast systemu
+        [PSCustomObject]@{ Nazev = "Caesars Slots Free Casino"; Pattern = "CaesarsSlotsFreeCasino" }
+        [PSCustomObject]@{ Nazev = "Candy Crush Saga"; Pattern = "king.com.CandyCrushSaga" }
+        [PSCustomObject]@{ Nazev = "Candy Crush Soda Saga"; Pattern = "king.com.CandyCrushSodaSaga" }
+        [PSCustomObject]@{ Nazev = "Centrum Office"; Pattern = "Microsoft.MicrosoftOfficeHub" }
+        [PSCustomObject]@{ Nazev = "Cestování"; Pattern = "Microsoft.BingTravel" }
+        [PSCustomObject]@{ Nazev = "Clipchamp editor videa"; Pattern = "Clipchamp.Clipchamp" }
+        [PSCustomObject]@{ Nazev = "Cooking Fever"; Pattern = "COOKINGFEVER" }
+        [PSCustomObject]@{ Nazev = "CyberLink Media Suite Essentials"; Pattern = "CyberLinkMediaSuiteEssentials" }
+        [PSCustomObject]@{ Nazev = "Dev Home"; Pattern = "Microsoft.Windows.DevHome" } # Pro vyvojare
+        [PSCustomObject]@{ Nazev = "Disney (Obecná?)"; Pattern = "Disney" } # Může být příliš obecné
+        [PSCustomObject]@{ Nazev = "Disney Magic Kingdoms"; Pattern = "DisneyMagicKingdoms" }
+        [PSCustomObject]@{ Nazev = "Drawboard PDF"; Pattern = "DrawboardPDF" }
+        [PSCustomObject]@{ Nazev = "Duolingo - Učte se jazyky"; Pattern = "Duolingo-LearnLanguagesforFree" }
+        [PSCustomObject]@{ Nazev = "Eclipse Manager"; Pattern = "EclipseManager" }
+        [PSCustomObject]@{ Nazev = "Facebook"; Pattern = "Facebook" }
+        [PSCustomObject]@{ Nazev = "FarmVille 2: Country Escape"; Pattern = "FarmVille2CountryEscape" }
+        [PSCustomObject]@{ Nazev = "Feedback Hub"; Pattern = "Microsoft.WindowsFeedbackHub" }
+        [PSCustomObject]@{ Nazev = "Filmy a TV pořady"; Pattern = "Microsoft.ZuneVideo" }
+        [PSCustomObject]@{ Nazev = "Finance"; Pattern = "Microsoft.BingFinance" }
+        [PSCustomObject]@{ Nazev = "Fitbit"; Pattern = "fitbit" }
+        [PSCustomObject]@{ Nazev = "Flipboard"; Pattern = "Flipboard" }
+        [PSCustomObject]@{ Nazev = "Fotoaparát"; Pattern = "Microsoft.WindowsCamera" } # !! Pokud používáte kameru !!
+        [PSCustomObject]@{ Nazev = "Hidden City"; Pattern = "HiddenCity" }
+        [PSCustomObject]@{ Nazev = "Hudba Groove"; Pattern = "Microsoft.ZuneMusic" }
+        [PSCustomObject]@{ Nazev = "Hulu Plus"; Pattern = "HULULLC.HULUPLUS" }
+        [PSCustomObject]@{ Nazev = "iHeartRadio"; Pattern = "iHeartRadio" }
+        [PSCustomObject]@{ Nazev = "Instagram"; Pattern = "Instagram" }
+        [PSCustomObject]@{ Nazev = "Jídlo a pití"; Pattern = "Microsoft.BingFoodAndDrink" }
+        [PSCustomObject]@{ Nazev = "Lidé (Kontakty)"; Pattern = "Microsoft.People" } # !! Propojeno s Poštou !!
+        [PSCustomObject]@{ Nazev = "LinkedIn"; Pattern = "LinkedInforWindows" }
+        [PSCustomObject]@{ Nazev = "Live Wallpaper (Sidia)"; Pattern = "Sidia.LiveWallpaper" }
+        [PSCustomObject]@{ Nazev = "Mapy Windows"; Pattern = "Microsoft.WindowsMaps" }
+        [PSCustomObject]@{ Nazev = "March of Empires"; Pattern = "MarchofEmpires" }
+        [PSCustomObject]@{ Nazev = "Microsoft Family Safety"; Pattern = "MicrosoftCorporationII.MicrosoftFamily" }
+        [PSCustomObject]@{ Nazev = "Microsoft Journal"; Pattern = "Microsoft.MicrosoftJournal" }
+        [PSCustomObject]@{ Nazev = "Microsoft Power BI"; Pattern = "Microsoft.MicrosoftPowerBIForWindows" } # Nástroj pro analýzu dat
+        [PSCustomObject]@{ Nazev = "Microsoft Solitaire Collection"; Pattern = "Microsoft.MicrosoftSolitaireCollection" }
+        [PSCustomObject]@{ Nazev = "Microsoft Sway"; Pattern = "Microsoft.Office.Sway" }
+        [PSCustomObject]@{ Nazev = "Microsoft Teams"; Pattern = "MicrosoftTeams" } # Může být více záznamů
+        [PSCustomObject]@{ Nazev = "Microsoft To Do"; Pattern = "Microsoft.Todos" } # Může být užitečné
+        [PSCustomObject]@{ Nazev = "Microsoft Whiteboard"; Pattern = "Microsoft.Whiteboard" }
+        [PSCustomObject]@{ Nazev = "Mixed Reality Portal"; Pattern = "Microsoft.MixedReality.Portal" }
+        [PSCustomObject]@{ Nazev = "Mobilní tarify"; Pattern = "Microsoft.OneConnect" }
+        [PSCustomObject]@{ Nazev = "MS Teams"; Pattern = "MSTeams" } # Může být více záznamů
+        [PSCustomObject]@{ Nazev = "Netflix"; Pattern = "Netflix" }
+        [PSCustomObject]@{ Nazev = "Neznámá MS aplikace (549981C3F5F10)"; Pattern = "Microsoft.549981C3F5F10" } # !! Nejasné !!
+        [PSCustomObject]@{ Nazev = "NYT Crossword"; Pattern = "NYTCrossword" }
+        [PSCustomObject]@{ Nazev = "OneCalendar"; Pattern = "OneCalendar" }
+        [PSCustomObject]@{ Nazev = "OneDrive"; Pattern = "Microsoft.OneDrive" } # !! Synchronizace souborů - VELMI OPATRNĚ !!
+        [PSCustomObject]@{ Nazev = "OneNote"; Pattern = "Microsoft.Office.OneNote" } # !! Pozor, pokud používáte !!
+        [PSCustomObject]@{ Nazev = "Outlook (Nový)"; Pattern = "Microsoft.OutlookForWindows" } # !! Pozor, pokud používáte !!
+        [PSCustomObject]@{ Nazev = "Pandora"; Pattern = "PandoraMediaInc" }
+        [PSCustomObject]@{ Nazev = "Phototastic Collage"; Pattern = "PhototasticCollage" }
+        [PSCustomObject]@{ Nazev = "PicsArt Photo Studio"; Pattern = "PicsArt-PhotoStudio" }
+        [PSCustomObject]@{ Nazev = "Plex"; Pattern = "Plex" }
+        [PSCustomObject]@{ Nazev = "Počasí"; Pattern = "Microsoft.BingWeather" }
+        [PSCustomObject]@{ Nazev = "Polarr Photo Editor (Academic)"; Pattern = "PolarrPhotoEditorAcademicEdition" }
+        [PSCustomObject]@{ Nazev = "Pošta a Kalendář"; Pattern = "Microsoft.windowscommunicationsapps" } # !! Pokud používáte !!
+        [PSCustomObject]@{ Nazev = "Power Automate Desktop"; Pattern = "Microsoft.PowerAutomateDesktop" } # Automatizační nástroj
+        [PSCustomObject]@{ Nazev = "Print 3D"; Pattern = "Microsoft.Print3D" }
+        [PSCustomObject]@{ Nazev = "Prohlížeč 3D objektů"; Pattern = "Microsoft.Microsoft3DViewer" }
+        [PSCustomObject]@{ Nazev = "Propojení s telefonem"; Pattern = "Microsoft.YourPhone" } # !! Propojení s mobilem !!
+        [PSCustomObject]@{ Nazev = "Propojení zařízení"; Pattern = "MicrosoftWindows.CrossDevice" } # Souvisí s propojením
+        [PSCustomObject]@{ Nazev = "Překladač"; Pattern = "Microsoft.BingTranslator" }
+        [PSCustomObject]@{ Nazev = "Royal Revolt"; Pattern = "Royal Revolt" } # Mezera muze byt problem
+        [PSCustomObject]@{ Nazev = "Rychlé poznámky"; Pattern = "Microsoft.MicrosoftStickyNotes" } # Může být užitečné
+        [PSCustomObject]@{ Nazev = "Rychlý pomocník"; Pattern = "MicrosoftCorporationII.QuickAssist" } # Nástroj pro vzdálenou pomoc
+        [PSCustomObject]@{ Nazev = "Shazam"; Pattern = "Shazam" }
+        [PSCustomObject]@{ Nazev = "Skype"; Pattern = "Microsoft.SkypeApp" }
+        [PSCustomObject]@{ Nazev = "Sling TV"; Pattern = "SlingTV" }
+        [PSCustomObject]@{ Nazev = "Sport"; Pattern = "Microsoft.BingSports" }
+        [PSCustomObject]@{ Nazev = "Spotify"; Pattern = "Spotify" }
+        [PSCustomObject]@{ Nazev = "Test rychlosti sítě"; Pattern = "Microsoft.NetworkSpeedTest" }
+        [PSCustomObject]@{ Nazev = "TikTok"; Pattern = "TikTok" }
+        [PSCustomObject]@{ Nazev = "TuneIn Radio"; Pattern = "TuneInRadio" }
+        [PSCustomObject]@{ Nazev = "Twitter / X"; Pattern = "Twitter" }
+        [PSCustomObject]@{ Nazev = "Viber"; Pattern = "Viber" }
+        [PSCustomObject]@{ Nazev = "Vzdálená plocha"; Pattern = "Microsoft.RemoteDesktop" } # !! Pokud používáte !!
+        [PSCustomObject]@{ Nazev = "Vyhledávání (Bing)"; Pattern = "Microsoft.BingSearch" }
+        [PSCustomObject]@{ Nazev = "WinZip Universal"; Pattern = "WinZipUniversal" }
+        [PSCustomObject]@{ Nazev = "Wunderlist"; Pattern = "Wunderlist" } # Ukoncena sluzba
+        [PSCustomObject]@{ Nazev = "Xbox"; Pattern = "Microsoft.XboxApp" } # Potřeba pro některé hry/služby Xbox
+        [PSCustomObject]@{ Nazev = "XING"; Pattern = "XING" }
+        [PSCustomObject]@{ Nazev = "Záznam zvuku"; Pattern = "Microsoft.WindowsSoundRecorder" } # Jednoduchý záznamník
+        [PSCustomObject]@{ Nazev = "Zdraví a fitness"; Pattern = "Microsoft.BingHealthAndFitness" }
+        [PSCustomObject]@{ Nazev = "Získat nápovědu"; Pattern = "Microsoft.GetHelp" }
+        [PSCustomObject]@{ Nazev = "Zprávy"; Pattern = "Microsoft.BingNews" } # Může být více (Bing/MS News)
+        [PSCustomObject]@{ Nazev = "Zprávy (MS Messaging)"; Pattern = "Microsoft.Messaging" } # Odlišné od News
+        [PSCustomObject]@{ Nazev = "Zprávy (MS News)"; Pattern = "Microsoft.News" } # Může být více (Bing/MS News)
+
+    ) | Sort-Object Nazev # Setridime podle ceskeho nazvu pro lepsi prehlednost
+
+    Write-Log "Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, cz nazvy)." "DEBUG" -NoConsole
+
+    # --- OKNO S CHECKBOXY PRO VYBER K ODINSTALACI ---
+    # (Tato cast zustava stejna jako v predchozi verzi, jen pracuje s novym seznamem)
+    $selectedAppsToUninstall = $null
+    try {
+        Add-Type -AssemblyName System.Windows.Forms
+        Add-Type -AssemblyName System.Drawing
+
+        $form = New-Object System.Windows.Forms.Form
+        $form.Text = "Vyberte aplikace Windows k ODINSTALACI (VELMI OPATRNE!)"
+        $form.Size = New-Object System.Drawing.Size(550, 600)
+        $form.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
+        $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::Sizable
+        $form.MaximizeBox = $true
+        $form.MinimizeBox = $true
+
+        $labelWarning = New-Object System.Windows.Forms.Label
+        $labelWarning.Text = "VAROVÁNÍ: Odinstalace některých položek může poškodit systém! Pečlivě vybírejte."
+        $labelWarning.Dock = [System.Windows.Forms.DockStyle]::Top
+        $labelWarning.ForeColor = [System.Drawing.Color]::Red
+        $labelWarning.Font = New-Object System.Drawing.Font("Segoe UI", 9, [System.Drawing.FontStyle]::Bold)
+        $labelWarning.AutoSize = $true
+
+        $buttonPanel = New-Object System.Windows.Forms.Panel
+        $buttonPanel.Dock = [System.Windows.Forms.DockStyle]::Bottom
+        $buttonPanel.Height = 40
+
+        $okButton = New-Object System.Windows.Forms.Button
+        $okButton.Text = "Odinstalovat vybrané"
+        $okButton.Anchor = [System.Windows.Forms.AnchorStyles]::Right
+        $okButton.Size = New-Object System.Drawing.Size(150, 30)
+        $okButton.Location = New-Object System.Drawing.Point($form.ClientSize.Width - $okButton.Width - $cancelButton.Width - 20, 5)
+        $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+        $form.AcceptButton = $okButton
+
+        $cancelButton = New-Object System.Windows.Forms.Button
+        $cancelButton.Text = "Storno"
+        $cancelButton.Anchor = [System.Windows.Forms.AnchorStyles]::Right
+        $cancelButton.Size = New-Object System.Drawing.Size(75, 30)
+        $cancelButton.Location = New-Object System.Drawing.Point($form.ClientSize.Width - $cancelButton.Width - 10, 5)
+        $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+        $form.CancelButton = $cancelButton
+
+        $buttonPanel.Controls.Add($okButton)
+        $buttonPanel.Controls.Add($cancelButton)
+
+        $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
+        $checkedListBox.Dock = [System.Windows.Forms.DockStyle]::Fill
+        $checkedListBox.CheckOnClick = $true
+        $checkedListBox.FormattingEnabled = $true
+
+        # Naplneni seznamu
+        $checkedListBox.DisplayMember = "Nazev" # Zobrazujeme nami prirazeny cesky Nazev
+        foreach ($app in $availableBloatware) {
+            [void]$checkedListBox.Items.Add($app)
+        }
+
+        # Pridani prvku do okna
+        $form.Controls.Add($checkedListBox)
+        $form.Controls.Add($buttonPanel)
+        $form.Controls.Add($labelWarning)
+
+        Write-Host "Zobrazuji okno pro vyber aplikaci k ODINSTALACI..." -ForegroundColor Cyan
+        Write-Host "Pamatujte na VAROVANI!" -ForegroundColor Red
+        $result = $form.ShowDialog()
+
+        if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
+            $selectedAppsToUninstall = @($checkedListBox.CheckedItems | ForEach-Object { $_ })
+            if ($selectedAppsToUninstall -and $selectedAppsToUninstall.Count -gt 0) {
+                 Write-Log "Uzivatel potvrdil vyber aplikaci k odinstalaci." "INFO" -NoConsole
+            } else {
+                $selectedAppsToUninstall = $null
+                Write-Log "Uzivatel potvrdil OK, ale nevybral zadne aplikace." "WARN"
+            }
+        } else {
+            $selectedAppsToUninstall = $null
+            Write-Log "Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni)." "INFO"
+        }
+        $form.Dispose()
+
+    } catch {
+        Write-Log "Chyba pri vytvareni/zpracovani okna pro vyber bloatware: $($_.Exception.Message)" "ERROR"
+        Write-Error "Došlo k chybě při práci s oknem pro výběr aplikací: $($_.Exception.Message)"
+        $selectedAppsToUninstall = $null
+    }
+
+    # --- KONEC OKNA S CHECKBOXY ---
+
+    if ($null -eq $selectedAppsToUninstall) {
+        Write-Log "Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena." "WARN"
+        Write-Host "`nNebyly vybrany zadne aplikace k odinstalaci. Akce zrusena." -ForegroundColor Yellow
+        return
+    }
+
+    Write-Host "`nBudou ODINSTALOVÁNY tyto aplikace:" -ForegroundColor Red
+    $selectedAppsToUninstall | ForEach-Object { Write-Host "  - $($_.Nazev) (Pattern: '$($_.Pattern)')" }
+    Write-Host ""
+
+    # Potvrzeni pred samotnou akci
+    if (-not (Get-Confirmation "OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci?")) {
+        Write-Log "Odinstalace vybranych aplikaci Windows zrusena uzivatelem." "INFO"
+        Write-Host "Odinstalace zrusena."
+        return
+    }
+
+    Write-Log "Zahajeni odinstalace vybranych aplikaci Windows." "INFO" -NoConsole
+    Write-Host "`nSpoustim odinstalaci vybranych aplikaci pomoci PowerShell..."
+    Write-Host "Pripadne chyby (aplikace nenalezena, nelze odebrat) budou ignorovany..."
+    $uninstallErrors = 0
+
+    foreach ($appToRemove in $selectedAppsToUninstall) {
+        $pattern = $appToRemove.Pattern
+        $appName = $appToRemove.Nazev # Pouzivame cesky nazev pro logovani/vypis
+        Write-Host "----------------------------------------------"
+        Write-Log "Pokus o odinstalaci '$appName' (vzor: '$pattern')." "INFO" -NoConsole
+        Write-Host "Pokousim se odinstalovat: $appName (vzor: '$pattern')..."
+        $packageRemovedCount = 0
+        try {
+            # Hledame presnejsi shodu vuci PackageFamilyName nebo jmenu, pripadne FullName
+             $packages = Get-AppxPackage -AllUsers -Name $pattern -ErrorAction SilentlyContinue
+             if (-not $packages) {
+                 $packages = Get-AppxPackage -AllUsers | Where-Object { $_.Name -like "*$pattern*" -or $_.PackageFullName -like "*$pattern*" -or $_.PackageFamilyName -like "*$pattern*" }
+             }
+
             if ($packages) {
-                foreach ($package in $packages) { Write-Log "  Odstranuji: $($package.Name) ($($package.PackageFullName))" "DEBUG" -NoConsole; Write-Host "  Odstranuji: $($package.Name) ($($package.PackageFullName))"; Remove-AppxPackage -Package $package.PackageFullName -AllUsers -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 100; $packageRemoved = $true }
-                if ($packageRemoved) { Write-Log "  Odstraneni pro '$appName' (vzor '$pattern') dokoncenoo." "INFO" -NoConsole; Write-Host "  Odstraneni pro '$appName' dokoncenoo." -ForegroundColor Green }
-            } else { Write-Log "  Nenalezeny zadne nainstalovane balicky pro '$appName' (vzor '$pattern')." "INFO" -NoConsole; Write-Host "  Nenalezeny zadne nainstalovane balicky pro '$appName'." -ForegroundColor Gray }
-        } catch { Write-Log "  Doslo k obecne chybe pri zpracovani '$appName': $($_.Exception.Message)" "ERROR"; Write-Warning "  Doslo k obecne chybe pri zpracovani '$appName': $($_.Exception.Message)" }
+                foreach ($package in $packages) {
+                    Write-Log "  Odstranuji: $($package.Name) ($($package.PackageFullName))" "DEBUG" -NoConsole
+                    Write-Host "  Odstranuji: $($package.Name) ($($package.PackageFullName))"
+                    Remove-AppxPackage -Package $package.PackageFullName -AllUsers -ErrorAction SilentlyContinue
+                    if ($LASTEXITCODE -ne 0) {
+                        Write-Log "  Chyba pri odstranovani $($package.PackageFullName) (Kod $LASTEXITCODE)" "WARN"
+                    } else {
+                        $packageRemovedCount++
+                    }
+                    Start-Sleep -Milliseconds 100
+                }
+                if ($packageRemovedCount -gt 0) {
+                    Write-Log "  Uspesne odstraneno $packageRemovedCount balicku pro '$appName' (vzor '$pattern')." "INFO" -NoConsole
+                    Write-Host "  Uspesne odstraneno $packageRemovedCount balicku pro '$appName'." -ForegroundColor Green
+                } else {
+                    Write-Log "  Nepodarilo se odstranit zadny nalezany balicek pro '$appName' (vzor '$pattern')." "WARN" -NoConsole
+                    Write-Warning "  Nepodarilo se odstranit zadny nalezany balicek pro '$appName'."
+                    $uninstallErrors++
+                }
+            } else {
+                Write-Log "  Nenalezeny zadne nainstalovane balicky pro '$appName' (vzor '$pattern')." "INFO" -NoConsole
+                Write-Host "  Nenalezeny zadne nainstalovane balicky pro '$appName'." -ForegroundColor Gray
+            }
+        } catch {
+            Write-Log "  Doslo k obecne chybe pri zpracovani '$appName': $($_.Exception.Message)" "ERROR"
+            Write-Warning "  Doslo k obecne chybe pri zpracovani '$appName': $($_.Exception.Message)"
+            $uninstallErrors++
+        }
          Write-Host "----------------------------------------------`n"
     }
-    Write-Host "============================================================" -ForegroundColor Yellow; Write-Log "Odinstalace bloatware dokoncena." "INFO"
-    Write-Host "Pokus o odinstalaci specifikovanych aplikaci (mimo Edge) dokoncen." -ForegroundColor Green; Write-Host "============================================================" -ForegroundColor Yellow
-    Write-Host "Pro uplne projeveni zmen muze byt potreba restartovat pocitac."; Write-Log "Ukoncena funkce Uninstall-Bloatware." "INFO" -NoConsole
+
+    Write-Host "============================================================" -ForegroundColor Yellow
+    Write-Log "Odinstalace vybranych aplikaci Windows dokoncena." "INFO"
+    if ($uninstallErrors -eq 0) {
+         Write-Host "Pokus o odinstalaci vybranych aplikaci dokoncen." -ForegroundColor Green
+         Write-Host "(Pripadne neuspesne odstraneni jednotlivych balicku viz log)." -ForegroundColor Gray
+    } else {
+        Write-Warning "Pokus o odinstalaci vybranych aplikaci dokoncen s $uninstallErrors chybami behem zpracovani (viz log)."
+    }
+    Write-Host "============================================================" -ForegroundColor Yellow
+    Write-Host "Pro uplne projeveni zmen muze byt potreba restartovat pocitac."
+    Write-Log "Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, cz nazvy)." "INFO" -NoConsole
 }
 
 # Funkce pro odinstalaci Edge
