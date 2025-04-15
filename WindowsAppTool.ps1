@@ -326,7 +326,6 @@ function Uninstall-Bloatware {
         [PSCustomObject]@{ Nazev = "Asphalt 8: Airborne"; Pattern = "Asphalt8Airborne" }
         [PSCustomObject]@{ Nazev = "Autodesk SketchBook"; Pattern = "AutodeskSketchBook" }
         [PSCustomObject]@{ Nazev = "Bubble Witch 3 Saga"; Pattern = "king.com.BubbleWitch3Saga" }
-        [PSCustomObject]@{ Nazev = "Budík a hodiny"; Pattern = "Microsoft.WindowsAlarms" } # Soucast systemu
         [PSCustomObject]@{ Nazev = "Caesars Slots Free Casino"; Pattern = "CaesarsSlotsFreeCasino" }
         [PSCustomObject]@{ Nazev = "Candy Crush Saga"; Pattern = "king.com.CandyCrushSaga" }
         [PSCustomObject]@{ Nazev = "Candy Crush Soda Saga"; Pattern = "king.com.CandyCrushSodaSaga" }
@@ -336,7 +335,6 @@ function Uninstall-Bloatware {
         [PSCustomObject]@{ Nazev = "Cooking Fever"; Pattern = "COOKINGFEVER" }
         [PSCustomObject]@{ Nazev = "CyberLink Media Suite Essentials"; Pattern = "CyberLinkMediaSuiteEssentials" }
         [PSCustomObject]@{ Nazev = "Dev Home"; Pattern = "Microsoft.Windows.DevHome" } # Pro vyvojare
-        [PSCustomObject]@{ Nazev = "Disney (Obecná?)"; Pattern = "Disney" } # Může být příliš obecné
         [PSCustomObject]@{ Nazev = "Disney Magic Kingdoms"; Pattern = "DisneyMagicKingdoms" }
         [PSCustomObject]@{ Nazev = "Drawboard PDF"; Pattern = "DrawboardPDF" }
         [PSCustomObject]@{ Nazev = "Duolingo - Učte se jazyky"; Pattern = "Duolingo-LearnLanguagesforFree" }
@@ -372,7 +370,6 @@ function Uninstall-Bloatware {
         [PSCustomObject]@{ Nazev = "Mobilní tarify"; Pattern = "Microsoft.OneConnect" }
         [PSCustomObject]@{ Nazev = "MS Teams"; Pattern = "MSTeams" } # Může být více záznamů
         [PSCustomObject]@{ Nazev = "Netflix"; Pattern = "Netflix" }
-        [PSCustomObject]@{ Nazev = "Neznámá MS aplikace (549981C3F5F10)"; Pattern = "Microsoft.549981C3F5F10" } # !! Nejasné !!
         [PSCustomObject]@{ Nazev = "NYT Crossword"; Pattern = "NYTCrossword" }
         [PSCustomObject]@{ Nazev = "OneCalendar"; Pattern = "OneCalendar" }
         [PSCustomObject]@{ Nazev = "OneDrive"; Pattern = "Microsoft.OneDrive" } # !! Synchronizace souborů - VELMI OPATRNĚ !!
@@ -408,7 +405,6 @@ function Uninstall-Bloatware {
         [PSCustomObject]@{ Nazev = "Vyhledávání (Bing)"; Pattern = "Microsoft.BingSearch" }
         [PSCustomObject]@{ Nazev = "WinZip Universal"; Pattern = "WinZipUniversal" }
         [PSCustomObject]@{ Nazev = "Wunderlist"; Pattern = "Wunderlist" } # Ukoncena sluzba
-        [PSCustomObject]@{ Nazev = "Xbox"; Pattern = "Microsoft.XboxApp" } # Potřeba pro některé hry/služby Xbox
         [PSCustomObject]@{ Nazev = "XING"; Pattern = "XING" }
         [PSCustomObject]@{ Nazev = "Záznam zvuku"; Pattern = "Microsoft.WindowsSoundRecorder" } # Jednoduchý záznamník
         [PSCustomObject]@{ Nazev = "Zdraví a fitness"; Pattern = "Microsoft.BingHealthAndFitness" }

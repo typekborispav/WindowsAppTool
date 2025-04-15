@@ -104,3 +104,19 @@
 [2025-04-15 17:36:46] [INFO] Dokoncen pokus o odinstalaci 'Microsoft Visual C++ 2015-2022 Redistributab… Microsoft.VCRedist.2015+.x86'.
 [2025-04-15 17:36:46] [WARN] Odinstalace dokoncena s 4 chybami.
 [2025-04-15 17:36:46] [INFO] Ukoncena funkce Uninstall-SelectedApps.
+[2025-04-15 17:39:44] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 17:39:44] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 17:39:44] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 17:39:45] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 17:39:45] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 17:39:45] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 17:39:45] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 17:39:51] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 17:40:09] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 17:40:09] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, cz nazvy).
+[2025-04-15 17:40:09] [ERROR] Chyba pri vytvareni/zpracovani okna pro vyber bloatware: Method invocation failed because [System.Object[]] does not contain a method named 'op_Subtraction'.
+[2025-04-15 17:40:09] [ERROR] 
+! NEOÄŚEKAVANA CHYBA SKRIPTU: DoĹˇlo k chybÄ› pĹ™i prĂˇci s oknem pro vĂ˝bÄ›r aplikacĂ­: Method invocation failed because [System.Object[]] does not contain a method named 'op_Subtraction'. | Cil:  | Radek: 829
+[2025-04-15 17:40:16] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 17:40:16] [INFO] Zahajena funkce Uninstall-Bloatware.
+[2025-04-15 17:40:16] [DEBUG] Cekam na specificke potvrzeni: 'Pro potvrzeni odinstalace napiste 'ANO' (VyĹľadovĂˇno: 'ANO')'
