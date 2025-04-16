@@ -227,3 +227,243 @@
 [2025-04-15 19:31:19] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Zpravy (MS News)' (vzor 'Microsoft.News').
 [2025-04-15 19:31:19] [INFO] Odinstalace vybranych aplikaci Windows dokoncena.
 [2025-04-15 19:31:19] [INFO] Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-16 18:48:07] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-16 18:48:07] [INFO] Spoustim script: WindowsAppTool
+[2025-04-16 18:48:07] [DEBUG] Kontrola administratorskych prav...
+[2025-04-16 18:48:07] [INFO] Kontrola admin prav uspesna.
+[2025-04-16 18:48:08] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-16 18:48:08] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-16 18:48:09] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-16 18:48:09] [INFO] Nacitam zakladni systemove informace...
+[2025-04-16 18:48:16] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-16 18:48:23] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 18:48:23] [INFO] Zahajena funkce Install-DriversExperimental (vc. auto Choco install).
+[2025-04-16 18:48:23] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 18:48:23] [WARN] Nastroj Chocolatey nebyl nalezen.
+[2025-04-16 18:48:23] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se pokusit automaticky nainstalovat Chocolatey? (Vyzaduje Internet a prava spravce) (A/N)'
+[2025-04-16 18:48:30] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 18:48:30] [INFO] Uzivatel potvrdil pokus o automatickou instalaci Chocolatey.
+[2025-04-16 18:48:31] [DEBUG] Spoustim instalacni prikaz Choco (stazeno pres Invoke-RestMethod)...
+[2025-04-16 18:48:31] [ERROR] Chyba behem automaticke instalace Chocolatey: At line:42 char:1
++ [CmdletBinding(DefaultParameterSetName = 'Default')]
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'CmdletBinding'.
+
+At line:43 char:1
++ param(
++ ~~~~~
+Unexpected token 'param' in expression or statement.
+
+At line:49 char:13
++     [string]
++             ~
+Missing closing ')' in expression.
+
+At line:111 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+
+At line:48 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:66 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:83 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:101 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:108 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+[2025-04-16 18:48:31] [ERROR] 
+! NEOÄŚEKAVANA CHYBA SKRIPTU: Behem automaticke instalace Chocolatey doslo k chybe: At line:42 char:1
++ [CmdletBinding(DefaultParameterSetName = 'Default')]
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'CmdletBinding'.
+
+At line:43 char:1
++ param(
++ ~~~~~
+Unexpected token 'param' in expression or statement.
+
+At line:49 char:13
++     [string]
++             ~
+Missing closing ')' in expression.
+
+At line:111 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+
+At line:48 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:66 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:83 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:101 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:108 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'. | Cil:  | Radek: 967
+[2025-04-16 18:48:38] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-16 18:48:38] [INFO] Spoustim script: WindowsAppTool
+[2025-04-16 18:48:38] [DEBUG] Kontrola administratorskych prav...
+[2025-04-16 18:48:39] [INFO] Kontrola admin prav uspesna.
+[2025-04-16 18:48:40] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-16 18:48:40] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-16 18:48:40] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-16 18:48:40] [INFO] Nacitam zakladni systemove informace...
+[2025-04-16 18:48:47] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-16 18:48:53] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 18:48:53] [INFO] Zahajena funkce Install-DriversExperimental (vc. auto Choco install).
+[2025-04-16 18:48:53] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 18:48:53] [WARN] Nastroj Chocolatey nebyl nalezen.
+[2025-04-16 18:48:53] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se pokusit automaticky nainstalovat Chocolatey? (Vyzaduje Internet a prava spravce) (A/N)'
+[2025-04-16 18:49:04] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 18:49:04] [INFO] Uzivatel potvrdil pokus o automatickou instalaci Chocolatey.
+[2025-04-16 18:49:04] [DEBUG] Spoustim instalacni prikaz Choco (stazeno pres Invoke-RestMethod)...
+[2025-04-16 18:49:04] [ERROR] Chyba behem automaticke instalace Chocolatey: At line:42 char:1
++ [CmdletBinding(DefaultParameterSetName = 'Default')]
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'CmdletBinding'.
+
+At line:43 char:1
++ param(
++ ~~~~~
+Unexpected token 'param' in expression or statement.
+
+At line:49 char:13
++     [string]
++             ~
+Missing closing ')' in expression.
+
+At line:111 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+
+At line:48 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:66 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:83 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:101 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:108 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+[2025-04-16 18:49:04] [ERROR] 
+! NEOÄŚEKAVANA CHYBA SKRIPTU: Behem automaticke instalace Chocolatey doslo k chybe: At line:42 char:1
++ [CmdletBinding(DefaultParameterSetName = 'Default')]
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'CmdletBinding'.
+
+At line:43 char:1
++ param(
++ ~~~~~
+Unexpected token 'param' in expression or statement.
+
+At line:49 char:13
++     [string]
++             ~
+Missing closing ')' in expression.
+
+At line:111 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+
+At line:48 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:66 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:83 char:5
++     [Parameter(Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:101 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'.
+
+At line:108 char:5
++     [Parameter(ParameterSetName = 'Proxy', Mandatory = $false)]
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected attribute 'Parameter'. | Cil:  | Radek: 967
+[2025-04-16 18:56:26] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-16 18:56:26] [INFO] Spoustim script: WindowsAppTool
+[2025-04-16 18:56:27] [DEBUG] Kontrola administratorskych prav...
+[2025-04-16 18:56:27] [INFO] Kontrola admin prav uspesna.
+[2025-04-16 18:56:28] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-16 18:56:28] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-16 18:56:28] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-16 18:56:28] [INFO] Nacitam zakladni systemove informace...
+[2025-04-16 18:56:34] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-16 18:56:39] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 18:56:39] [INFO] Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 18:56:39] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 18:56:39] [WARN] Nastroj Chocolatey nebyl nalezen.
+[2025-04-16 18:56:39] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se pokusit automaticky nainstalovat Chocolatey? (Vyzaduje Internet a prava spravce) (A/N)'
+[2025-04-16 18:56:42] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 18:56:42] [INFO] Uzivatel potvrdil pokus o automatickou instalaci Chocolatey.
+[2025-04-16 18:56:42] [DEBUG] Nastavuji ExecutionPolicy a SecurityProtocol pro instalaci Choco.
+[2025-04-16 18:56:42] [INFO] Stahuji a spoustim instalacni skript Chocolatey pomoci iex(DownloadString)...
+[2025-04-16 18:56:58] [INFO] Instalacni prikaz Choco (iex) dokoncen. Cekam 5 sekund a overuji znovu dostupnost Choco...
+[2025-04-16 18:57:03] [INFO] Chocolatey uspesne nainstalovano/nalezeno: C:\ProgramData\chocolatey\bin\choco.exe
+[2025-04-16 18:57:03] [DEBUG] Pokus o aktualizaci promennych prostredi pro Choco v aktualni session.
+[2025-04-16 18:57:03] [DEBUG] Importovan Choco profilovy modul.
+[2025-04-16 18:57:06] [INFO] Detekovana GPU NVIDIA: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-16 18:57:06] [DEBUG] Cekam na potvrzeni uzivatele: 'Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart) (A/N)'
+[2025-04-16 18:57:14] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 18:57:14] [WARN] Uzivatel potvrdil pokus o aktualizaci ovladace NVIDIA pres Choco.
+[2025-04-16 18:57:14] [INFO] Spoustim proces: 'choco' s argumenty 'upgrade geforce-game-ready-driver -y --ignore-checksums' pro akci 'Aktualizace ovladace NVIDIA (Game Ready)'
+[2025-04-16 18:57:14] [INFO] Provadim akci: Aktualizace ovladace NVIDIA (Game Ready)...

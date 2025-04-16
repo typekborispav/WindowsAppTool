@@ -728,6 +728,140 @@ function Uninstall-SelectedApps {
      Write-Log "Ukoncena funkce Uninstall-SelectedApps." "INFO" -NoConsole
 }
 
+# Funkce pro pokus o instalaci/aktualizaci ovladacu pres Chocolatey (EXPERIMENTÁLNÍ! - vcetne instalace Choco)
+# Funkce pro pokus o instalaci/aktualizaci ovladacu pres Chocolatey (EXPERIMENTÁLNÍ! - vcetne instalace Choco)
+# Funkce pro pokus o instalaci/aktualizaci ovladacu pres Chocolatey (EXPERIMENTÁLNÍ! - oprava instalace Choco)
+function Install-DriversExperimental {
+    Clear-Host; Write-Log "Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install)." "INFO" -NoConsole
+    Write-Host "============================================================" -ForegroundColor Magenta
+    Write-Host "    Instalace/Aktualizace ovladacu (EXPERIMENTÁLNÍ!)" -ForegroundColor Magenta
+    Write-Host "============================================================" -ForegroundColor Magenta
+    Write-Host ""
+    Write-Host " /!\\ V A R O V A N I /!\\" -ForegroundColor Red -BackgroundColor Black
+    Write-Host " Tato funkce pouziva Chocolatey k pokusu o aktualizaci ovladacu." -ForegroundColor Red
+    Write-Host " Aktualizace ovladacu timto zpusobem muze byt NESTABILNI a RIZIKOVA!" -ForegroundColor Red
+    Write-Host " Muze dojit k problemum se systemem, nefunkcnosti HW nebo nutnosti rucni opravy." -ForegroundColor Red
+    Write-Host " Pokracujte pouze na vlastni nebezpeci!" -ForegroundColor Red
+    Write-Host " Doporucene metody jsou oficialni nastroje vyrobcu (Nvidia, AMD, Intel)." -ForegroundColor Yellow
+    Write-Host ""
+
+    # 1. Kontrola Chocolatey a pripadna instalace
+    Write-Host "Kontroluji dostupnost nastroje Chocolatey..." -ForegroundColor Gray
+    Write-Log "Kontrola dostupnosti nastroje Chocolatey..." "INFO" -NoConsole
+    $chocoExe = Get-Command choco -ErrorAction SilentlyContinue
+
+    if ($null -eq $chocoExe) {
+        Write-Log "Nastroj Chocolatey nebyl nalezen." "WARN"
+        Write-Warning "Nastroj Chocolatey nebyl nalezen."
+
+        # Zeptat se uzivatele na instalaci
+        if (Get-Confirmation "Chcete se pokusit automaticky nainstalovat Chocolatey? (Vyzaduje Internet a prava spravce)") {
+            Write-Log "Uzivatel potvrdil pokus o automatickou instalaci Chocolatey." "INFO"
+            Write-Host "Pokousim se nainstalovat Chocolatey... (Muze to chvili trvat)" -ForegroundColor Cyan
+            try {
+                # === OPRAVENY ZPUSOB INSTALACE CHOCO ===
+                Write-Log "Nastavuji ExecutionPolicy a SecurityProtocol pro instalaci Choco." "DEBUG"
+                # Nastavit ExecutionPolicy jen pro tento proces
+                Set-ExecutionPolicy Bypass -Scope Process -Force
+                # Nastavit potrebny bezpecnostni protokol (minimalne TLS 1.2)
+                # Vycet moznych hodnot: [System.Net.SecurityProtocolType] | Get-Member -Static -MemberType Property | Select-Object -ExpandProperty Name
+                # Kombinace pro TLS 1.2 a 1.3 (pokud je podporovan systemem)
+                [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12 -bor [System.Net.SecurityProtocolType]::Tls13
+
+                Write-Log "Stahuji a spoustim instalacni skript Chocolatey pomoci iex(DownloadString)..." "INFO"
+                # Spustit oficialni prikaz pres Invoke-Expression (iex) na stazenem obsahu
+                $chocoInstallUrl = 'https://community.chocolatey.org/install.ps1'
+                Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($chocoInstallUrl))
+                # === KONEC OPRAVENEHO ZPUSOBU ===
+
+                # Dame Choco chvilku na pripadne dokonceni operaci na pozadi a aktualizaci prostredi
+                Write-Log "Instalacni prikaz Choco (iex) dokoncen. Cekam 5 sekund a overuji znovu dostupnost Choco..." "INFO"
+                Start-Sleep -Seconds 5
+
+                # Znovu overime, zda je Choco nyni dostupne
+                $chocoExe = Get-Command choco -ErrorAction SilentlyContinue
+                if ($null -ne $chocoExe) {
+                    Write-Host "Chocolatey bylo uspesne nainstalovano (nebo uz bylo)." -ForegroundColor Green
+                    Write-Log "Chocolatey uspesne nainstalovano/nalezeno: $($chocoExe.Source)" "INFO"
+                    # Pokusime se aktualizovat promenne prostredi pro aktualni session
+                    try {
+                        Write-Log "Pokus o aktualizaci promennych prostredi pro Choco v aktualni session." "DEBUG"
+                        $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+                        $chocoProfile = Join-Path -Path $env:ChocolateyInstall -ChildPath 'helpers\chocolateyProfile.psm1' -ErrorAction SilentlyContinue
+                        if ($chocoProfile -and (Test-Path $chocoProfile)) {
+                             Import-Module $chocoProfile -Force
+                             Write-Log "Importovan Choco profilovy modul." "DEBUG"
+                        } else { Write-Log "Choco profilovy modul nenalezen v ocekavanem umisteni." "DEBUG"}
+                    } catch { Write-Log "Nepodarilo se plne aktualizovat prostredi pro Choco v aktualni session: $($_.Exception.Message)" "WARN"}
+
+                    Write-Host "Pokracuji..." -ForegroundColor Gray
+                    Start-Sleep -Seconds 2
+                } else {
+                    # Instalace se nezdarila
+                    Write-Log "Chyba: Chocolatey stale neni dostupne ani po pokusu o instalaci." "ERROR"
+                    Write-Error "Automaticka instalace Chocolatey se nezdarila. Zkuste to prosim rucne podle navodu na https://chocolatey.org/install"
+                    return # Ukonci tuto funkci
+                }
+            } catch {
+                # Chyba behem stahovani nebo spousteni instalacniho skriptu
+                Write-Log "Chyba behem automaticke instalace Chocolatey: $($_.Exception.Message)" "ERROR"
+                Write-Error "Behem automaticke instalace Chocolatey doslo k chybe: $($_.Exception.Message)"
+                Write-Error "Zkuste to prosim rucne podle navodu na https://chocolatey.org/install"
+                return # Ukonci tuto funkci
+            }
+        } else {
+            # Uzivatel odmitl instalaci
+            Write-Log "Uzivatel odmitl automatickou instalaci Chocolatey." "INFO"
+            Write-Host "Instalace Chocolatey preskocena. Funkce ovladacu nemuze pokracovat." -ForegroundColor Yellow
+            return # Ukonci tuto funkci
+        }
+    } else {
+         # Choco bylo nalezeno hned na zacatku
+         Write-Host "Chocolatey nalezeno: $($chocoExe.Source)" -ForegroundColor Green
+         Write-Log "Chocolatey nalezeno: $($chocoExe.Source)" "INFO" -NoConsole
+         Start-Sleep -Seconds 1
+    }
+
+    # Pokud jsme se dostali sem, Choco je (nebo by melo byt) k dispozici
+
+    # 2. Detekce GPU a nabidka akci
+    Write-Host "`n--- Ovladače Grafické karty ---"
+    $hasNvidia = $sysInfoGPU | Where-Object { $_ -like '*NVIDIA*' -or $_ -like '*GeForce*' }
+    $hasAmdGpu = $sysInfoGPU | Where-Object { $_ -like '*AMD*' -or $_ -like '*Radeon*' }
+
+    if ($hasNvidia) {
+        Write-Host "`nDetekovana graficka karta NVIDIA." -ForegroundColor Cyan
+        Write-Log "Detekovana GPU NVIDIA: $($sysInfoGPU -join '; ')" "INFO" -NoConsole
+        if (Get-Confirmation "Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart)") {
+            Write-Log "Uzivatel potvrdil pokus o aktualizaci ovladace NVIDIA pres Choco." "WARN"
+            Start-ProcessWait "choco" "upgrade geforce-game-ready-driver -y --ignore-checksums" "Aktualizace ovladace NVIDIA (Game Ready)"
+        }
+    }
+    elseif ($hasAmdGpu) {
+        Write-Host "`nDetekovana graficka karta AMD." -ForegroundColor Cyan
+        Write-Log "Detekovana GPU AMD: $($sysInfoGPU -join '; ')" "INFO" -NoConsole
+        Write-Host "Pro graficke karty AMD Chocolatey nema vzdy spolehlivy balicek." -ForegroundColor Yellow
+        Write-Host "Doporucuje se stahnout ovladace primo od vyrobce." -ForegroundColor Yellow
+        Write-Host "Navstivte oficialni stranku pro stazeni:" -ForegroundColor Cyan
+        Write-Host "https://www.amd.com/en/support/download/drivers.html" -ForegroundColor White
+        Write-Log "Zobrazen odkaz na stazeni ovladacu AMD." "INFO" -NoConsole
+    }
+    else {
+        Write-Host "`nNebyla detekovana podporovana graficka karta NVIDIA nebo AMD pro automatickou akci." -ForegroundColor Gray
+        Write-Log "Nebyla detekovana GPU NVIDIA ani AMD v '$($sysInfoGPU -join '; ')'." "INFO" -NoConsole
+    }
+
+    # 3. Nabidka pro AMD Chipset (nezavisle na GPU)
+    Write-Host "`n--- Ovladače čipsetu AMD Ryzen ---"
+    Write-Log "Nabidka aktualizace ovladacu cipsetu AMD Ryzen." "INFO" -NoConsole
+    if (Get-Confirmation "Chcete se POKUSIT aktualizovat ovladace cipsetu AMD Ryzen pomoci Chocolatey? (Relevantni POUZE pokud mate CPU/cipset AMD Ryzen!)") {
+         Write-Log "Uzivatel potvrdil pokus o aktualizaci ovladacu cipsetu AMD Ryzen pres Choco." "WARN"
+         Start-ProcessWait "choco" "upgrade amd-ryzen-chipset -y --ignore-checksums" "Aktualizace ovladacu cipsetu AMD Ryzen"
+    }
+
+    Write-Host "`nAkce souvisejici s ovladaci dokonceny (nebo preskoceny)."
+    Write-Log "Ukoncena funkce Install-DriversExperimental (v3 - oprava auto Choco install)." "INFO" -NoConsole
+}
 # --- Hlavni cast skriptu ---
 
 Write-Log "================ Zahajeni logovani skriptu ================" "INFO"
@@ -817,8 +951,9 @@ do {
     Write-Host "  6. Zobrazit typ licence Windows"
     Write-Host "  7. Odinstalovat specifickou aplikaci (Vyber)"
     Write-Host "  8. Konec"
+    Write-Host "  9. Instalovat/Aktualizovat ovladace (EXPERIMENTÁLNÍ!)" # <--- NOVÝ ŘÁDEK
     Write-Host ""
-    $choice = Read-Host "Zadejte cislo volby (1-8)"
+    $choice = Read-Host "Zadejte cislo volby (1-9)" # <--- ZMĚNA ROZSAHU (1-9)
     Write-Log "Uzivatel zvolil v menu moznost: $choice" "INFO"
 
     try {
@@ -835,6 +970,7 @@ do {
                 Write-Host "Skript ukoncen."
                 exit 0 # Ukonci script a zavre okno
             }
+            "9" { Install-DriversExperimental } # <--- NOVÝ ŘÁDEK
             default {
                 Write-Log "Neplatna volba menu: '$choice'." "WARN"
                 Write-Warning "Neplatna volba '$choice'. Zkuste to znovu."
