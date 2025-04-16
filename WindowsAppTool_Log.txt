@@ -1,0 +1,229 @@
+﻿[2025-04-15 18:11:33] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 18:11:33] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-15 18:11:33] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-15 18:11:39] [INFO] Uzivatel potvrdil vyber aplikaci k odinstalaci.
+[2025-04-15 18:11:39] [DEBUG] Cekam na potvrzeni uzivatele: 'OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci? (A/N)'
+[2025-04-15 18:11:40] [DEBUG] Uzivatel odpovedel: ''
+[2025-04-15 18:11:40] [WARN] Neplatna odpoved uzivatele.
+[2025-04-15 18:11:40] [DEBUG] Cekam na potvrzeni uzivatele: 'OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci? (A/N)'
+[2025-04-15 18:11:42] [DEBUG] Uzivatel odpovedel: 'a'
+[2025-04-15 18:11:42] [INFO] Zahajeni odinstalace vybranych aplikaci Windows.
+[2025-04-15 18:11:42] [INFO] Pokus o odinstalaci 'Disney (Obecna?)' (vzor: 'Disney').
+[2025-04-15 18:11:43] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Disney (Obecna?)' (vzor 'Disney').
+[2025-04-15 18:11:43] [INFO] Odinstalace vybranych aplikaci Windows dokoncena.
+[2025-04-15 18:11:43] [INFO] Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-15 19:28:06] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-15 19:28:06] [INFO] Spoustim script: WindowsAppTool
+[2025-04-15 19:28:06] [DEBUG] Kontrola administratorskych prav...
+[2025-04-15 19:28:06] [INFO] Kontrola admin prav uspesna.
+[2025-04-15 19:28:07] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-15 19:28:07] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-15 19:28:07] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-15 19:28:07] [INFO] Nacitam zakladni systemove informace...
+[2025-04-15 19:28:15] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-15 19:28:24] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 19:28:24] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-15 19:28:24] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-15 19:29:17] [INFO] Uzivatel potvrdil vyber aplikaci k odinstalaci.
+[2025-04-15 19:29:17] [DEBUG] Cekam na potvrzeni uzivatele: 'OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci? (A/N)'
+[2025-04-15 19:29:20] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-15 19:29:20] [INFO] Zahajeni odinstalace vybranych aplikaci Windows.
+[2025-04-15 19:29:20] [INFO] Pokus o odinstalaci '3D Builder' (vzor: 'Microsoft.3DBuilder').
+[2025-04-15 19:29:21] [INFO]   Nenalezeny zadne nainstalovane balicky pro '3D Builder' (vzor 'Microsoft.3DBuilder').
+[2025-04-15 19:29:21] [INFO] Pokus o odinstalaci 'ACG Media Player' (vzor: 'ACGMediaPlayer').
+[2025-04-15 19:29:21] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'ACG Media Player' (vzor 'ACGMediaPlayer').
+[2025-04-15 19:29:21] [INFO] Pokus o odinstalaci 'Actipro Software LLC' (vzor: 'ActiproSoftwareLLC').
+[2025-04-15 19:29:21] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Actipro Software LLC' (vzor 'ActiproSoftwareLLC').
+[2025-04-15 19:29:21] [INFO] Pokus o odinstalaci 'Adobe Photoshop Express' (vzor: 'AdobeSystemsIncorporated.AdobePhotoshopExpress').
+[2025-04-15 19:29:21] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Adobe Photoshop Express' (vzor 'AdobeSystemsIncorporated.AdobePhotoshopExpress').
+[2025-04-15 19:29:21] [INFO] Pokus o odinstalaci 'Amazon (Aplikace)' (vzor: 'Amazon.com.Amazon').
+[2025-04-15 19:29:22] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Amazon (Aplikace)' (vzor 'Amazon.com.Amazon').
+[2025-04-15 19:29:22] [INFO] Pokus o odinstalaci 'Amazon Prime Video' (vzor: 'AmazonVideo.PrimeVideo').
+[2025-04-15 19:29:22] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Amazon Prime Video' (vzor 'AmazonVideo.PrimeVideo').
+[2025-04-15 19:29:22] [INFO] Pokus o odinstalaci 'Asphalt 8: Airborne' (vzor: 'Asphalt8Airborne').
+[2025-04-15 19:29:22] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Asphalt 8: Airborne' (vzor 'Asphalt8Airborne').
+[2025-04-15 19:29:22] [INFO] Pokus o odinstalaci 'Autodesk SketchBook' (vzor: 'AutodeskSketchBook').
+[2025-04-15 19:29:22] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Autodesk SketchBook' (vzor 'AutodeskSketchBook').
+[2025-04-15 19:29:22] [INFO] Pokus o odinstalaci 'Bubble Witch 3 Saga' (vzor: 'king.com.BubbleWitch3Saga').
+[2025-04-15 19:29:22] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Bubble Witch 3 Saga' (vzor 'king.com.BubbleWitch3Saga').
+[2025-04-15 19:29:22] [INFO] Pokus o odinstalaci 'Budik a hodiny' (vzor: 'Microsoft.WindowsAlarms').
+[2025-04-15 19:29:23] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Budik a hodiny' (vzor 'Microsoft.WindowsAlarms').
+[2025-04-15 19:29:23] [INFO] Pokus o odinstalaci 'Caesars Slots Free Casino' (vzor: 'CaesarsSlotsFreeCasino').
+[2025-04-15 19:29:23] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Caesars Slots Free Casino' (vzor 'CaesarsSlotsFreeCasino').
+[2025-04-15 19:29:23] [INFO] Pokus o odinstalaci 'Candy Crush Saga' (vzor: 'king.com.CandyCrushSaga').
+[2025-04-15 19:29:23] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Candy Crush Saga' (vzor 'king.com.CandyCrushSaga').
+[2025-04-15 19:29:23] [INFO] Pokus o odinstalaci 'Candy Crush Soda Saga' (vzor: 'king.com.CandyCrushSodaSaga').
+[2025-04-15 19:29:23] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Candy Crush Soda Saga' (vzor 'king.com.CandyCrushSodaSaga').
+[2025-04-15 19:29:23] [INFO] Pokus o odinstalaci 'Centrum Office' (vzor: 'Microsoft.MicrosoftOfficeHub').
+[2025-04-15 19:29:23] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Centrum Office' (vzor 'Microsoft.MicrosoftOfficeHub').
+[2025-04-15 19:29:23] [INFO] Pokus o odinstalaci 'Cestovani' (vzor: 'Microsoft.BingTravel').
+[2025-04-15 19:29:23] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Cestovani' (vzor 'Microsoft.BingTravel').
+[2025-04-15 19:29:23] [INFO] Pokus o odinstalaci 'Clipchamp editor videa' (vzor: 'Clipchamp.Clipchamp').
+[2025-04-15 19:29:24] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Clipchamp editor videa' (vzor 'Clipchamp.Clipchamp').
+[2025-04-15 19:29:24] [INFO] Pokus o odinstalaci 'Cooking Fever' (vzor: 'COOKINGFEVER').
+[2025-04-15 19:29:24] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Cooking Fever' (vzor 'COOKINGFEVER').
+[2025-04-15 19:29:24] [INFO] Pokus o odinstalaci 'CyberLink Media Suite Essentials' (vzor: 'CyberLinkMediaSuiteEssentials').
+[2025-04-15 19:29:24] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'CyberLink Media Suite Essentials' (vzor 'CyberLinkMediaSuiteEssentials').
+[2025-04-15 19:29:24] [INFO] Pokus o odinstalaci 'Dev Home' (vzor: 'Microsoft.Windows.DevHome').
+[2025-04-15 19:29:24] [DEBUG]   Odstranuji: Microsoft.Windows.DevHome (Microsoft.Windows.DevHome_0.2001.758.0_x64__8wekyb3d8bbwe)
+[2025-04-15 19:29:25] [INFO]   Uspesne odstraneno 1 balicku pro 'Dev Home' (vzor 'Microsoft.Windows.DevHome').
+[2025-04-15 19:29:25] [INFO] Pokus o odinstalaci 'Instagram' (vzor: 'Instagram').
+[2025-04-15 19:29:25] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Instagram' (vzor 'Instagram').
+[2025-04-15 19:29:25] [INFO] Odinstalace vybranych aplikaci Windows dokoncena.
+[2025-04-15 19:29:25] [INFO] Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-15 19:29:38] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-15 19:29:38] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-15 19:29:38] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-15 19:31:01] [INFO] Uzivatel potvrdil vyber aplikaci k odinstalaci.
+[2025-04-15 19:31:01] [DEBUG] Cekam na potvrzeni uzivatele: 'OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci? (A/N)'
+[2025-04-15 19:31:04] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-15 19:31:04] [INFO] Zahajeni odinstalace vybranych aplikaci Windows.
+[2025-04-15 19:31:04] [INFO] Pokus o odinstalaci 'FarmVille 2: Country Escape' (vzor: 'FarmVille2CountryEscape').
+[2025-04-15 19:31:05] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'FarmVille 2: Country Escape' (vzor 'FarmVille2CountryEscape').
+[2025-04-15 19:31:05] [INFO] Pokus o odinstalaci 'Feedback Hub' (vzor: 'Microsoft.WindowsFeedbackHub').
+[2025-04-15 19:31:05] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Feedback Hub' (vzor 'Microsoft.WindowsFeedbackHub').
+[2025-04-15 19:31:05] [INFO] Pokus o odinstalaci 'Filmy a TV porady' (vzor: 'Microsoft.ZuneVideo').
+[2025-04-15 19:31:05] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Filmy a TV porady' (vzor 'Microsoft.ZuneVideo').
+[2025-04-15 19:31:05] [INFO] Pokus o odinstalaci 'Finance' (vzor: 'Microsoft.BingFinance').
+[2025-04-15 19:31:05] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Finance' (vzor 'Microsoft.BingFinance').
+[2025-04-15 19:31:05] [INFO] Pokus o odinstalaci 'Fitbit' (vzor: 'fitbit').
+[2025-04-15 19:31:05] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Fitbit' (vzor 'fitbit').
+[2025-04-15 19:31:05] [INFO] Pokus o odinstalaci 'Flipboard' (vzor: 'Flipboard').
+[2025-04-15 19:31:06] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Flipboard' (vzor 'Flipboard').
+[2025-04-15 19:31:06] [INFO] Pokus o odinstalaci 'Hidden City' (vzor: 'HiddenCity').
+[2025-04-15 19:31:06] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Hidden City' (vzor 'HiddenCity').
+[2025-04-15 19:31:06] [INFO] Pokus o odinstalaci 'Hudba Groove' (vzor: 'Microsoft.ZuneMusic').
+[2025-04-15 19:31:06] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Hudba Groove' (vzor 'Microsoft.ZuneMusic').
+[2025-04-15 19:31:06] [INFO] Pokus o odinstalaci 'Hulu Plus' (vzor: 'HULULLC.HULUPLUS').
+[2025-04-15 19:31:06] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Hulu Plus' (vzor 'HULULLC.HULUPLUS').
+[2025-04-15 19:31:06] [INFO] Pokus o odinstalaci 'iHeartRadio' (vzor: 'iHeartRadio').
+[2025-04-15 19:31:06] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'iHeartRadio' (vzor 'iHeartRadio').
+[2025-04-15 19:31:06] [INFO] Pokus o odinstalaci 'Instagram' (vzor: 'Instagram').
+[2025-04-15 19:31:06] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Instagram' (vzor 'Instagram').
+[2025-04-15 19:31:07] [INFO] Pokus o odinstalaci 'Jidlo a piti' (vzor: 'Microsoft.BingFoodAndDrink').
+[2025-04-15 19:31:07] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Jidlo a piti' (vzor 'Microsoft.BingFoodAndDrink').
+[2025-04-15 19:31:07] [INFO] Pokus o odinstalaci 'Lide (Kontakty)' (vzor: 'Microsoft.People').
+[2025-04-15 19:31:07] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Lide (Kontakty)' (vzor 'Microsoft.People').
+[2025-04-15 19:31:07] [INFO] Pokus o odinstalaci 'LinkedIn' (vzor: 'LinkedInforWindows').
+[2025-04-15 19:31:07] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'LinkedIn' (vzor 'LinkedInforWindows').
+[2025-04-15 19:31:07] [INFO] Pokus o odinstalaci 'Live Wallpaper (Sidia)' (vzor: 'Sidia.LiveWallpaper').
+[2025-04-15 19:31:07] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Live Wallpaper (Sidia)' (vzor 'Sidia.LiveWallpaper').
+[2025-04-15 19:31:07] [INFO] Pokus o odinstalaci 'Mapy Windows' (vzor: 'Microsoft.WindowsMaps').
+[2025-04-15 19:31:07] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Mapy Windows' (vzor 'Microsoft.WindowsMaps').
+[2025-04-15 19:31:07] [INFO] Pokus o odinstalaci 'March of Empires' (vzor: 'MarchofEmpires').
+[2025-04-15 19:31:08] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'March of Empires' (vzor 'MarchofEmpires').
+[2025-04-15 19:31:08] [INFO] Pokus o odinstalaci 'Microsoft Family Safety' (vzor: 'MicrosoftCorporationII.MicrosoftFamily').
+[2025-04-15 19:31:08] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Family Safety' (vzor 'MicrosoftCorporationII.MicrosoftFamily').
+[2025-04-15 19:31:08] [INFO] Pokus o odinstalaci 'Microsoft Journal' (vzor: 'Microsoft.MicrosoftJournal').
+[2025-04-15 19:31:08] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Journal' (vzor 'Microsoft.MicrosoftJournal').
+[2025-04-15 19:31:08] [INFO] Pokus o odinstalaci 'Microsoft Power BI' (vzor: 'Microsoft.MicrosoftPowerBIForWindows').
+[2025-04-15 19:31:08] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Power BI' (vzor 'Microsoft.MicrosoftPowerBIForWindows').
+[2025-04-15 19:31:08] [INFO] Pokus o odinstalaci 'Microsoft Solitaire Collection' (vzor: 'Microsoft.MicrosoftSolitaireCollection').
+[2025-04-15 19:31:08] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Solitaire Collection' (vzor 'Microsoft.MicrosoftSolitaireCollection').
+[2025-04-15 19:31:08] [INFO] Pokus o odinstalaci 'Microsoft Sway' (vzor: 'Microsoft.Office.Sway').
+[2025-04-15 19:31:09] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Sway' (vzor 'Microsoft.Office.Sway').
+[2025-04-15 19:31:09] [INFO] Pokus o odinstalaci 'Microsoft Teams' (vzor: 'MicrosoftTeams').
+[2025-04-15 19:31:09] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Teams' (vzor 'MicrosoftTeams').
+[2025-04-15 19:31:09] [INFO] Pokus o odinstalaci 'Microsoft To Do' (vzor: 'Microsoft.Todos').
+[2025-04-15 19:31:09] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft To Do' (vzor 'Microsoft.Todos').
+[2025-04-15 19:31:09] [INFO] Pokus o odinstalaci 'Microsoft Whiteboard' (vzor: 'Microsoft.Whiteboard').
+[2025-04-15 19:31:09] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Microsoft Whiteboard' (vzor 'Microsoft.Whiteboard').
+[2025-04-15 19:31:09] [INFO] Pokus o odinstalaci 'Mixed Reality Portal' (vzor: 'Microsoft.MixedReality.Portal').
+[2025-04-15 19:31:09] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Mixed Reality Portal' (vzor 'Microsoft.MixedReality.Portal').
+[2025-04-15 19:31:09] [INFO] Pokus o odinstalaci 'Mobilni tarify' (vzor: 'Microsoft.OneConnect').
+[2025-04-15 19:31:10] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Mobilni tarify' (vzor 'Microsoft.OneConnect').
+[2025-04-15 19:31:10] [INFO] Pokus o odinstalaci 'MS Teams' (vzor: 'MSTeams').
+[2025-04-15 19:31:10] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'MS Teams' (vzor 'MSTeams').
+[2025-04-15 19:31:10] [INFO] Pokus o odinstalaci 'Netflix' (vzor: 'Netflix').
+[2025-04-15 19:31:10] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Netflix' (vzor 'Netflix').
+[2025-04-15 19:31:10] [INFO] Pokus o odinstalaci 'Neznama MS aplikace (549981C3F5F10)' (vzor: 'Microsoft.549981C3F5F10').
+[2025-04-15 19:31:10] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Neznama MS aplikace (549981C3F5F10)' (vzor 'Microsoft.549981C3F5F10').
+[2025-04-15 19:31:10] [INFO] Pokus o odinstalaci 'NYT Crossword' (vzor: 'NYTCrossword').
+[2025-04-15 19:31:10] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'NYT Crossword' (vzor 'NYTCrossword').
+[2025-04-15 19:31:10] [INFO] Pokus o odinstalaci 'OneCalendar' (vzor: 'OneCalendar').
+[2025-04-15 19:31:11] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'OneCalendar' (vzor 'OneCalendar').
+[2025-04-15 19:31:11] [INFO] Pokus o odinstalaci 'OneDrive' (vzor: 'Microsoft.OneDrive').
+[2025-04-15 19:31:11] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'OneDrive' (vzor 'Microsoft.OneDrive').
+[2025-04-15 19:31:11] [INFO] Pokus o odinstalaci 'OneNote' (vzor: 'Microsoft.Office.OneNote').
+[2025-04-15 19:31:11] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'OneNote' (vzor 'Microsoft.Office.OneNote').
+[2025-04-15 19:31:11] [INFO] Pokus o odinstalaci 'Outlook (Novy)' (vzor: 'Microsoft.OutlookForWindows').
+[2025-04-15 19:31:11] [DEBUG]   Odstranuji: Microsoft.OutlookForWindows (Microsoft.OutlookForWindows_1.2025.319.100_x64__8wekyb3d8bbwe)
+[2025-04-15 19:31:11] [INFO]   Uspesne odstraneno 1 balicku pro 'Outlook (Novy)' (vzor 'Microsoft.OutlookForWindows').
+[2025-04-15 19:31:11] [INFO] Pokus o odinstalaci 'Pandora' (vzor: 'PandoraMediaInc').
+[2025-04-15 19:31:12] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Pandora' (vzor 'PandoraMediaInc').
+[2025-04-15 19:31:12] [INFO] Pokus o odinstalaci 'Phototastic Collage' (vzor: 'PhototasticCollage').
+[2025-04-15 19:31:12] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Phototastic Collage' (vzor 'PhototasticCollage').
+[2025-04-15 19:31:12] [INFO] Pokus o odinstalaci 'PicsArt Photo Studio' (vzor: 'PicsArt-PhotoStudio').
+[2025-04-15 19:31:12] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'PicsArt Photo Studio' (vzor 'PicsArt-PhotoStudio').
+[2025-04-15 19:31:12] [INFO] Pokus o odinstalaci 'Plex' (vzor: 'Plex').
+[2025-04-15 19:31:12] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Plex' (vzor 'Plex').
+[2025-04-15 19:31:12] [INFO] Pokus o odinstalaci 'Pocasi' (vzor: 'Microsoft.BingWeather').
+[2025-04-15 19:31:12] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Pocasi' (vzor 'Microsoft.BingWeather').
+[2025-04-15 19:31:12] [INFO] Pokus o odinstalaci 'Polarr Photo Editor (Academic)' (vzor: 'PolarrPhotoEditorAcademicEdition').
+[2025-04-15 19:31:12] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Polarr Photo Editor (Academic)' (vzor 'PolarrPhotoEditorAcademicEdition').
+[2025-04-15 19:31:12] [INFO] Pokus o odinstalaci 'Posta a Kalendar' (vzor: 'Microsoft.windowscommunicationsapps').
+[2025-04-15 19:31:13] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Posta a Kalendar' (vzor 'Microsoft.windowscommunicationsapps').
+[2025-04-15 19:31:13] [INFO] Pokus o odinstalaci 'Power Automate Desktop' (vzor: 'Microsoft.PowerAutomateDesktop').
+[2025-04-15 19:31:13] [DEBUG]   Odstranuji: Microsoft.PowerAutomateDesktop (Microsoft.PowerAutomateDesktop_1.0.1080.0_x64__8wekyb3d8bbwe)
+[2025-04-15 19:31:13] [INFO]   Uspesne odstraneno 1 balicku pro 'Power Automate Desktop' (vzor 'Microsoft.PowerAutomateDesktop').
+[2025-04-15 19:31:13] [INFO] Pokus o odinstalaci 'Prekladac' (vzor: 'Microsoft.BingTranslator').
+[2025-04-15 19:31:13] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Prekladac' (vzor 'Microsoft.BingTranslator').
+[2025-04-15 19:31:13] [INFO] Pokus o odinstalaci 'Print 3D' (vzor: 'Microsoft.Print3D').
+[2025-04-15 19:31:13] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Print 3D' (vzor 'Microsoft.Print3D').
+[2025-04-15 19:31:13] [INFO] Pokus o odinstalaci 'Prohlizec 3D objektu' (vzor: 'Microsoft.Microsoft3DViewer').
+[2025-04-15 19:31:14] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Prohlizec 3D objektu' (vzor 'Microsoft.Microsoft3DViewer').
+[2025-04-15 19:31:14] [INFO] Pokus o odinstalaci 'Propojeni s telefonem' (vzor: 'Microsoft.YourPhone').
+[2025-04-15 19:31:14] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Propojeni s telefonem' (vzor 'Microsoft.YourPhone').
+[2025-04-15 19:31:14] [INFO] Pokus o odinstalaci 'Propojeni zarizeni' (vzor: 'MicrosoftWindows.CrossDevice').
+[2025-04-15 19:31:14] [DEBUG]   Odstranuji: MicrosoftWindows.CrossDevice (MicrosoftWindows.CrossDevice_1.25031.45.0_x64__cw5n1h2txyewy)
+[2025-04-15 19:31:15] [INFO]   Uspesne odstraneno 1 balicku pro 'Propojeni zarizeni' (vzor 'MicrosoftWindows.CrossDevice').
+[2025-04-15 19:31:15] [INFO] Pokus o odinstalaci 'Royal Revolt' (vzor: 'Royal Revolt').
+[2025-04-15 19:31:15] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Royal Revolt' (vzor 'Royal Revolt').
+[2025-04-15 19:31:15] [INFO] Pokus o odinstalaci 'Rychle poznamky' (vzor: 'Microsoft.MicrosoftStickyNotes').
+[2025-04-15 19:31:15] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Rychle poznamky' (vzor 'Microsoft.MicrosoftStickyNotes').
+[2025-04-15 19:31:15] [INFO] Pokus o odinstalaci 'Rychly pomocnik' (vzor: 'MicrosoftCorporationII.QuickAssist').
+[2025-04-15 19:31:15] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Rychly pomocnik' (vzor 'MicrosoftCorporationII.QuickAssist').
+[2025-04-15 19:31:15] [INFO] Pokus o odinstalaci 'Shazam' (vzor: 'Shazam').
+[2025-04-15 19:31:16] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Shazam' (vzor 'Shazam').
+[2025-04-15 19:31:16] [INFO] Pokus o odinstalaci 'Skype' (vzor: 'Microsoft.SkypeApp').
+[2025-04-15 19:31:16] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Skype' (vzor 'Microsoft.SkypeApp').
+[2025-04-15 19:31:16] [INFO] Pokus o odinstalaci 'Sling TV' (vzor: 'SlingTV').
+[2025-04-15 19:31:16] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Sling TV' (vzor 'SlingTV').
+[2025-04-15 19:31:16] [INFO] Pokus o odinstalaci 'Sport' (vzor: 'Microsoft.BingSports').
+[2025-04-15 19:31:16] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Sport' (vzor 'Microsoft.BingSports').
+[2025-04-15 19:31:16] [INFO] Pokus o odinstalaci 'Spotify' (vzor: 'Spotify').
+[2025-04-15 19:31:16] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Spotify' (vzor 'Spotify').
+[2025-04-15 19:31:16] [INFO] Pokus o odinstalaci 'Test rychlosti site' (vzor: 'Microsoft.NetworkSpeedTest').
+[2025-04-15 19:31:16] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Test rychlosti site' (vzor 'Microsoft.NetworkSpeedTest').
+[2025-04-15 19:31:16] [INFO] Pokus o odinstalaci 'TikTok' (vzor: 'TikTok').
+[2025-04-15 19:31:17] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'TikTok' (vzor 'TikTok').
+[2025-04-15 19:31:17] [INFO] Pokus o odinstalaci 'TuneIn Radio' (vzor: 'TuneInRadio').
+[2025-04-15 19:31:17] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'TuneIn Radio' (vzor 'TuneInRadio').
+[2025-04-15 19:31:17] [INFO] Pokus o odinstalaci 'Twitter / X' (vzor: 'Twitter').
+[2025-04-15 19:31:17] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Twitter / X' (vzor 'Twitter').
+[2025-04-15 19:31:17] [INFO] Pokus o odinstalaci 'Viber' (vzor: 'Viber').
+[2025-04-15 19:31:17] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Viber' (vzor 'Viber').
+[2025-04-15 19:31:17] [INFO] Pokus o odinstalaci 'Vyhledavani (Bing)' (vzor: 'Microsoft.BingSearch').
+[2025-04-15 19:31:17] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Vyhledavani (Bing)' (vzor 'Microsoft.BingSearch').
+[2025-04-15 19:31:17] [INFO] Pokus o odinstalaci 'Vzdalena plocha' (vzor: 'Microsoft.RemoteDesktop').
+[2025-04-15 19:31:18] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Vzdalena plocha' (vzor 'Microsoft.RemoteDesktop').
+[2025-04-15 19:31:18] [INFO] Pokus o odinstalaci 'WinZip Universal' (vzor: 'WinZipUniversal').
+[2025-04-15 19:31:18] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'WinZip Universal' (vzor 'WinZipUniversal').
+[2025-04-15 19:31:18] [INFO] Pokus o odinstalaci 'Wunderlist' (vzor: 'Wunderlist').
+[2025-04-15 19:31:18] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Wunderlist' (vzor 'Wunderlist').
+[2025-04-15 19:31:18] [INFO] Pokus o odinstalaci 'XING' (vzor: 'XING').
+[2025-04-15 19:31:18] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'XING' (vzor 'XING').
+[2025-04-15 19:31:18] [INFO] Pokus o odinstalaci 'Zaznam zvuku' (vzor: 'Microsoft.WindowsSoundRecorder').
+[2025-04-15 19:31:18] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Zaznam zvuku' (vzor 'Microsoft.WindowsSoundRecorder').
+[2025-04-15 19:31:18] [INFO] Pokus o odinstalaci 'Zdravi a fitness' (vzor: 'Microsoft.BingHealthAndFitness').
+[2025-04-15 19:31:19] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Zdravi a fitness' (vzor 'Microsoft.BingHealthAndFitness').
+[2025-04-15 19:31:19] [INFO] Pokus o odinstalaci 'Ziskat napovedu' (vzor: 'Microsoft.GetHelp').
+[2025-04-15 19:31:19] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Ziskat napovedu' (vzor 'Microsoft.GetHelp').
+[2025-04-15 19:31:19] [INFO] Pokus o odinstalaci 'Zpravy (Bing)' (vzor: 'Microsoft.BingNews').
+[2025-04-15 19:31:19] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Zpravy (Bing)' (vzor 'Microsoft.BingNews').
+[2025-04-15 19:31:19] [INFO] Pokus o odinstalaci 'Zpravy (MS Messaging)' (vzor: 'Microsoft.Messaging').
+[2025-04-15 19:31:19] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Zpravy (MS Messaging)' (vzor 'Microsoft.Messaging').
+[2025-04-15 19:31:19] [INFO] Pokus o odinstalaci 'Zpravy (MS News)' (vzor: 'Microsoft.News').
+[2025-04-15 19:31:19] [INFO]   Nenalezeny zadne nainstalovane balicky pro 'Zpravy (MS News)' (vzor 'Microsoft.News').
+[2025-04-15 19:31:19] [INFO] Odinstalace vybranych aplikaci Windows dokoncena.
+[2025-04-15 19:31:19] [INFO] Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
