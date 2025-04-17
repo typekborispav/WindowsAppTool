@@ -91,6 +91,51 @@ function Start-ProcessWait ($FilePath, $ArgumentList, $ActionDescription) {
     }
 }
 
+# Funkce pro pruvodce nastavenim (sekvencni spusteni vybranych funkci - Navrat do menu)
+function Start-WizardMode {
+    Clear-Host
+    Write-Log "Zahajena funkce Start-WizardMode (Pruvodce nastavenim - navrat do menu)." "INFO" -NoConsole
+    Write-Host "============================================================" -ForegroundColor Green
+    Write-Host "              Pruvodce nastavenim WindowsAppTool" -ForegroundColor Green # Bez diakritiky
+    Write-Host "============================================================" -ForegroundColor Green
+    Write-Host
+    Write-Host "Tento pruvodce vas provede nasledujicimi kroky v doporucenem poradi:" # Bez diakritiky
+    Write-Host "  1. Instalace zakladnich aplikaci" # Bez diakritiky
+    Write-Host "  2. Odinstalace aplikaci Windows" # Bez diakritiky
+    Write-Host "  3. Odinstalace Microsoft Edge - Volitelne v ramci kroku" # Bez diakritiky
+    Write-Host "  4. Otevreni stranek pro stazeni ovladacu GPU" # Bez diakritiky
+    Write-Host
+    if (-not (Get-Confirmation "Chcete spustit pruvodce nastavenim?")) { # Bez diakritiky
+        Write-Log "Pruvodce nastavenim zrusen uzivatelem." "INFO"
+        Write-Host "Pruvodce nastavenim zrusen." -ForegroundColor Yellow # Bez diakritiky
+        return # Vratime se do hlavniho menu
+    }
+
+    Write-Log "Pruvodce - Krok 1: Instalace zakladnich aplikaci" "INFO"
+    Write-Host "`n--- Pruvodce: Krok 1/4 - Instalace zakladnich aplikaci ---`n" -ForegroundColor Green # Bez diakritiky
+    Install-BasicApps # Volame funkci (drive #1, nyni #2 v menu)
+    Read-Host "`nPruvodce: Krok 1 dokoncen. Stisknete Enter pro pokracovani k odinstalaci aplikaci Windows..." # Bez diakritiky
+
+    Write-Log "Pruvodce - Krok 2: Odinstalace aplikaci Windows" "INFO"
+    Write-Host "`n--- Pruvodce: Krok 2/4 - Odinstalace aplikaci Windows ---`n" -ForegroundColor Green # Bez diakritiky
+    Uninstall-Bloatware # Volame funkci (drive #4, nyni #5 v menu)
+    Read-Host "`nPruvodce: Krok 2 dokoncen. Stisknete Enter pro pokracovani k odinstalaci Microsoft Edge..." # Bez diakritiky
+
+    Write-Log "Pruvodce - Krok 3: Odinstalace Microsoft Edge" "INFO"
+    Write-Host "`n--- Pruvodce: Krok 3/4 - Odinstalace Microsoft Edge ---`n" -ForegroundColor Green # Bez diakritiky
+    Uninstall-Edge # Volame funkci (drive #5, nyni #6 v menu)
+    Read-Host "`nPruvodce: Krok 3 dokoncen (nebo preskocen). Stisknete Enter pro pokracovani k ovladacum GPU..." # Bez diakritiky
+
+    Write-Log "Pruvodce - Krok 4: Otevreni stranek pro ovladace GPU" "INFO"
+    Write-Host "`n--- Pruvodce: Krok 4/4 - Otevreni stranek pro stazeni ovladacu GPU ---`n" -ForegroundColor Green # Bez diakritiky
+    Show-DriverDownloadPages # Volame funkci (nyni #9 v menu)
+
+    # Konec pruvodce - Nyni uz nic dalsiho nedelame, rizeni se vrati do hlavni smycky
+    Write-Host "`n============================================================" -ForegroundColor Green
+    Write-Host "            Pruvodce nastavenim byl dokoncen." -ForegroundColor Green # Bez diakritiky
+    Write-Host "============================================================" -ForegroundColor Green
+    Write-Log "Pruvodce nastavenim dokoncen." "INFO"
+}
 # Funkce pro instalaci vybranych aplikaci
 function Install-BasicApps {
     Clear-Host; Write-Log "Zahajena funkce Install-BasicApps (WinForms verze)." "INFO" -NoConsole
@@ -299,8 +344,9 @@ function Update-Winget {
 }
 
 # Funkce pro odinstalaci VYBRANYCH aplikaci Windows (Bloatware & More - S VYBEREM, Aktualizovany Seznam, Bez diakritiky)
+# Funkce pro odinstalaci VYBRANYCH aplikaci Windows (Bloatware & More - S VYBEREM, Aktualizovany Seznam, Bez diakritiky, Tlacitka Vse/Nic)
 function Uninstall-Bloatware {
-    Clear-Host; Write-Log "Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout)." "INFO" -NoConsole
+    Clear-Host; Write-Log "Zahajena funkce Uninstall-Bloatware (v5 - tlacitka Vse/Nic)." "INFO" -NoConsole
     Write-Host "============================================================" -ForegroundColor Yellow
     Write-Host "   Odinstalace vybranych aplikaci Windows (Vyber ze seznamu)" -ForegroundColor Yellow
     Write-Host "============================================================" -ForegroundColor Yellow
@@ -314,8 +360,6 @@ function Uninstall-Bloatware {
     Write-Host ""
 
     # Aktualizovany seznam aplikaci podle vaseho zadani, bez diakritiky
-    # POZN: 'Pattern' je zde obvykle PackageFamilyName nebo podobny identifikator.
-    #       Rizikove polozky oznaceny komentarem.
     $availableBloatware = @(
         [PSCustomObject]@{ Nazev = "3D Builder"; Pattern = "Microsoft.3DBuilder" }
         [PSCustomObject]@{ Nazev = "ACG Media Player"; Pattern = "ACGMediaPlayer" }
@@ -442,31 +486,62 @@ function Uninstall-Bloatware {
         $labelWarning.Font = New-Object System.Drawing.Font("Segoe UI", 9, [System.Drawing.FontStyle]::Bold)
         $labelWarning.AutoSize = $true
 
-        # --- BLOK PRO TLACITKA S FlowLayoutPanel (BEZ DIAKRITIKY) ---
+        # --- Panel a Tlacitka (vcetne Vybrat vse / Zrusit vse) ---
         $buttonPanel = New-Object System.Windows.Forms.FlowLayoutPanel
         $buttonPanel.Dock = [System.Windows.Forms.DockStyle]::Bottom
         $buttonPanel.Height = 40
         $buttonPanel.FlowDirection = [System.Windows.Forms.FlowDirection]::RightToLeft # Zarovna prvky doprava
 
+        # Tlacitko OK
         $okButton = New-Object System.Windows.Forms.Button
         $okButton.Text = "Odinstalovat vybrane" # Bez diakritiky
         $okButton.Size = New-Object System.Drawing.Size(150, 30)
         $okButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
         $okButton.Margin = New-Object System.Windows.Forms.Padding(3)
 
+        # Tlacitko Storno
         $cancelButton = New-Object System.Windows.Forms.Button
         $cancelButton.Text = "Storno"
         $cancelButton.Size = New-Object System.Drawing.Size(75, 30)
         $cancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
         $cancelButton.Margin = New-Object System.Windows.Forms.Padding(3)
 
-        $buttonPanel.Controls.Add($cancelButton)
-        $buttonPanel.Controls.Add($okButton)
+        # *** NOVE TLACITKO: Vybrat vse ***
+        $selectAllButton = New-Object System.Windows.Forms.Button
+        $selectAllButton.Text = "Vybrat vse" # Bez diakritiky
+        $selectAllButton.Size = New-Object System.Drawing.Size(100, 30)
+        $selectAllButton.Margin = New-Object System.Windows.Forms.Padding(10, 3, 3, 3) # Vetsi levy margin pro odstup
+        # Akce pro tlacitko Vybrat vse
+        $selectAllButton.add_Click({
+            for ($i = 0; $i -lt $checkedListBox.Items.Count; $i++) {
+                $checkedListBox.SetItemChecked($i, $true)
+            }
+        })
 
+        # *** NOVE TLACITKO: Zrusit vse ***
+        $deselectAllButton = New-Object System.Windows.Forms.Button
+        $deselectAllButton.Text = "Zrusit vse" # Bez diakritiky
+        $deselectAllButton.Size = New-Object System.Drawing.Size(100, 30)
+        $deselectAllButton.Margin = New-Object System.Windows.Forms.Padding(3)
+         # Akce pro tlacitko Zrusit vse
+        $deselectAllButton.add_Click({
+            for ($i = 0; $i -lt $checkedListBox.Items.Count; $i++) {
+                $checkedListBox.SetItemChecked($i, $false)
+            }
+        })
+
+        # Pridame tlacitka do FlowLayoutPanelu (Poradi pridani ovlivnuje poradi zobrazeni u RightToLeft!)
+        $buttonPanel.Controls.Add($cancelButton)       # Uplne vpravo
+        $buttonPanel.Controls.Add($okButton)           # Nalevo od Storno
+        $buttonPanel.Controls.Add($deselectAllButton)  # Nalevo od OK
+        $buttonPanel.Controls.Add($selectAllButton)    # Uplne vlevo
+
+        # Nastavime Accept/Cancel pro funkcnost Enter/Escape
         $form.AcceptButton = $okButton
         $form.CancelButton = $cancelButton
-        # --- KONEC BLOKU PRO TLACITKA ---
+        # --- Konec casti pro tlacitka ---
 
+        # Seznam s checkboxy
         $checkedListBox = New-Object System.Windows.Forms.CheckedListBox
         $checkedListBox.Dock = [System.Windows.Forms.DockStyle]::Fill
         $checkedListBox.CheckOnClick = $true
@@ -509,6 +584,7 @@ function Uninstall-Bloatware {
 
     # --- KONEC OKNA S CHECKBOXY ---
 
+    # Zbytek funkce pro odinstalaci zustava stejny
     if ($null -eq $selectedAppsToUninstall) {
         Write-Log "Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena." "WARN"
         Write-Host "`nNebyly vybrany zadne aplikace k odinstalaci. Akce zrusena." -ForegroundColor Yellow # Bez diakritiky
@@ -519,8 +595,7 @@ function Uninstall-Bloatware {
     $selectedAppsToUninstall | ForEach-Object { Write-Host "  - $($_.Nazev) (Pattern: '$($_.Pattern)')" } # Nazev uz je bez diakritiky
     Write-Host ""
 
-    # Potvrzeni pred samotnou akci
-    if (-not (Get-Confirmation "OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci?")) { # Bez diakritiky
+    if (-not (Get-Confirmation "OPRAVDU chcete pokracovat v ODINSTALACI techto vybranych aplikaci?")) {
         Write-Log "Odinstalace vybranych aplikaci Windows zrusena uzivatelem." "INFO"
         Write-Host "Odinstalace zrusena." -ForegroundColor Yellow # Bez diakritiky
         return
@@ -533,7 +608,7 @@ function Uninstall-Bloatware {
 
     foreach ($appToRemove in $selectedAppsToUninstall) {
         $pattern = $appToRemove.Pattern
-        $appName = $appToRemove.Nazev # Pouzivame Nazev bez diakritiky
+        $appName = $appToRemove.Nazev
         Write-Host "----------------------------------------------"
         Write-Log "Pokus o odinstalaci '$appName' (vzor: '$pattern')." "INFO" -NoConsole
         Write-Host "Pokousim se odinstalovat: $appName (vzor: '$pattern')..." # Bez diakritiky
@@ -586,7 +661,7 @@ function Uninstall-Bloatware {
     }
     Write-Host "============================================================" -ForegroundColor Yellow
     Write-Host "Pro uplne projeveni zmen muze byt potreba restartovat pocitac." # Bez diakritiky
-    Write-Log "Ukoncena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout)." "INFO" -NoConsole
+    Write-Log "Ukoncena funkce Uninstall-Bloatware (v5 - tlacitka Vse/Nic)." "INFO" -NoConsole
 }
 
 # Funkce pro odinstalaci Edge
@@ -728,139 +803,87 @@ function Uninstall-SelectedApps {
      Write-Log "Ukoncena funkce Uninstall-SelectedApps." "INFO" -NoConsole
 }
 
-# Funkce pro pokus o instalaci/aktualizaci ovladacu pres Chocolatey (EXPERIMENTÁLNÍ! - vcetne instalace Choco)
-# Funkce pro pokus o instalaci/aktualizaci ovladacu pres Chocolatey (EXPERIMENTÁLNÍ! - vcetne instalace Choco)
-# Funkce pro pokus o instalaci/aktualizaci ovladacu pres Chocolatey (EXPERIMENTÁLNÍ! - oprava instalace Choco)
-function Install-DriversExperimental {
-    Clear-Host; Write-Log "Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install)." "INFO" -NoConsole
-    Write-Host "============================================================" -ForegroundColor Magenta
-    Write-Host "    Instalace/Aktualizace ovladacu (EXPERIMENTÁLNÍ!)" -ForegroundColor Magenta
-    Write-Host "============================================================" -ForegroundColor Magenta
+# Funkce pro zobrazeni oficialnich stranek ke stazeni ovladacu GPU (Cista verze bez Choco/Chipset)
+function Show-DriverDownloadPages {
+    Clear-Host; Write-Log "Zahajena funkce Show-DriverDownloadPages." "INFO" -NoConsole
+    Write-Host "============================================================" -ForegroundColor Cyan
+    Write-Host "         Otevreni stranek pro stazeni ovladacu GPU" -ForegroundColor Cyan
+    Write-Host "============================================================" -ForegroundColor Cyan
     Write-Host ""
-    Write-Host " /!\\ V A R O V A N I /!\\" -ForegroundColor Red -BackgroundColor Black
-    Write-Host " Tato funkce pouziva Chocolatey k pokusu o aktualizaci ovladacu." -ForegroundColor Red
-    Write-Host " Aktualizace ovladacu timto zpusobem muze byt NESTABILNI a RIZIKOVA!" -ForegroundColor Red
-    Write-Host " Muze dojit k problemum se systemem, nefunkcnosti HW nebo nutnosti rucni opravy." -ForegroundColor Red
-    Write-Host " Pokracujte pouze na vlastni nebezpeci!" -ForegroundColor Red
-    Write-Host " Doporucene metody jsou oficialni nastroje vyrobcu (Nvidia, AMD, Intel)." -ForegroundColor Yellow
+    Write-Host "Tato funkce detekuje vyrobce vasich grafickych karet (Nvidia/AMD/Intel)" # Bez diakritiky
+    Write-Host "a pokusi se otevrit oficialni stranky pro stazeni ovladacu ve vasem prohlizeci." # Bez diakritiky
+    Write-Host "Samotny skript zadne ovladace neinstaluje." # Bez diakritiky
     Write-Host ""
 
-    # 1. Kontrola Chocolatey a pripadna instalace
-    Write-Host "Kontroluji dostupnost nastroje Chocolatey..." -ForegroundColor Gray
-    Write-Log "Kontrola dostupnosti nastroje Chocolatey..." "INFO" -NoConsole
-    $chocoExe = Get-Command choco -ErrorAction SilentlyContinue
+    # 1. Detekce GPU (pouzivame globalni promennou $sysInfoGPU)
+    Write-Host "Detekuji graficke karty..." -ForegroundColor Gray # Bez diakritiky
+    Write-Log "Detekuji GPU z: $($sysInfoGPU -join '; ')" "INFO" -NoConsole
 
-    if ($null -eq $chocoExe) {
-        Write-Log "Nastroj Chocolatey nebyl nalezen." "WARN"
-        Write-Warning "Nastroj Chocolatey nebyl nalezen."
-
-        # Zeptat se uzivatele na instalaci
-        if (Get-Confirmation "Chcete se pokusit automaticky nainstalovat Chocolatey? (Vyzaduje Internet a prava spravce)") {
-            Write-Log "Uzivatel potvrdil pokus o automatickou instalaci Chocolatey." "INFO"
-            Write-Host "Pokousim se nainstalovat Chocolatey... (Muze to chvili trvat)" -ForegroundColor Cyan
-            try {
-                # === OPRAVENY ZPUSOB INSTALACE CHOCO ===
-                Write-Log "Nastavuji ExecutionPolicy a SecurityProtocol pro instalaci Choco." "DEBUG"
-                # Nastavit ExecutionPolicy jen pro tento proces
-                Set-ExecutionPolicy Bypass -Scope Process -Force
-                # Nastavit potrebny bezpecnostni protokol (minimalne TLS 1.2)
-                # Vycet moznych hodnot: [System.Net.SecurityProtocolType] | Get-Member -Static -MemberType Property | Select-Object -ExpandProperty Name
-                # Kombinace pro TLS 1.2 a 1.3 (pokud je podporovan systemem)
-                [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12 -bor [System.Net.SecurityProtocolType]::Tls13
-
-                Write-Log "Stahuji a spoustim instalacni skript Chocolatey pomoci iex(DownloadString)..." "INFO"
-                # Spustit oficialni prikaz pres Invoke-Expression (iex) na stazenem obsahu
-                $chocoInstallUrl = 'https://community.chocolatey.org/install.ps1'
-                Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($chocoInstallUrl))
-                # === KONEC OPRAVENEHO ZPUSOBU ===
-
-                # Dame Choco chvilku na pripadne dokonceni operaci na pozadi a aktualizaci prostredi
-                Write-Log "Instalacni prikaz Choco (iex) dokoncen. Cekam 5 sekund a overuji znovu dostupnost Choco..." "INFO"
-                Start-Sleep -Seconds 5
-
-                # Znovu overime, zda je Choco nyni dostupne
-                $chocoExe = Get-Command choco -ErrorAction SilentlyContinue
-                if ($null -ne $chocoExe) {
-                    Write-Host "Chocolatey bylo uspesne nainstalovano (nebo uz bylo)." -ForegroundColor Green
-                    Write-Log "Chocolatey uspesne nainstalovano/nalezeno: $($chocoExe.Source)" "INFO"
-                    # Pokusime se aktualizovat promenne prostredi pro aktualni session
-                    try {
-                        Write-Log "Pokus o aktualizaci promennych prostredi pro Choco v aktualni session." "DEBUG"
-                        $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-                        $chocoProfile = Join-Path -Path $env:ChocolateyInstall -ChildPath 'helpers\chocolateyProfile.psm1' -ErrorAction SilentlyContinue
-                        if ($chocoProfile -and (Test-Path $chocoProfile)) {
-                             Import-Module $chocoProfile -Force
-                             Write-Log "Importovan Choco profilovy modul." "DEBUG"
-                        } else { Write-Log "Choco profilovy modul nenalezen v ocekavanem umisteni." "DEBUG"}
-                    } catch { Write-Log "Nepodarilo se plne aktualizovat prostredi pro Choco v aktualni session: $($_.Exception.Message)" "WARN"}
-
-                    Write-Host "Pokracuji..." -ForegroundColor Gray
-                    Start-Sleep -Seconds 2
-                } else {
-                    # Instalace se nezdarila
-                    Write-Log "Chyba: Chocolatey stale neni dostupne ani po pokusu o instalaci." "ERROR"
-                    Write-Error "Automaticka instalace Chocolatey se nezdarila. Zkuste to prosim rucne podle navodu na https://chocolatey.org/install"
-                    return # Ukonci tuto funkci
-                }
-            } catch {
-                # Chyba behem stahovani nebo spousteni instalacniho skriptu
-                Write-Log "Chyba behem automaticke instalace Chocolatey: $($_.Exception.Message)" "ERROR"
-                Write-Error "Behem automaticke instalace Chocolatey doslo k chybe: $($_.Exception.Message)"
-                Write-Error "Zkuste to prosim rucne podle navodu na https://chocolatey.org/install"
-                return # Ukonci tuto funkci
-            }
-        } else {
-            # Uzivatel odmitl instalaci
-            Write-Log "Uzivatel odmitl automatickou instalaci Chocolatey." "INFO"
-            Write-Host "Instalace Chocolatey preskocena. Funkce ovladacu nemuze pokracovat." -ForegroundColor Yellow
-            return # Ukonci tuto funkci
-        }
-    } else {
-         # Choco bylo nalezeno hned na zacatku
-         Write-Host "Chocolatey nalezeno: $($chocoExe.Source)" -ForegroundColor Green
-         Write-Log "Chocolatey nalezeno: $($chocoExe.Source)" "INFO" -NoConsole
-         Start-Sleep -Seconds 1
-    }
-
-    # Pokud jsme se dostali sem, Choco je (nebo by melo byt) k dispozici
-
-    # 2. Detekce GPU a nabidka akci
-    Write-Host "`n--- Ovladače Grafické karty ---"
     $hasNvidia = $sysInfoGPU | Where-Object { $_ -like '*NVIDIA*' -or $_ -like '*GeForce*' }
     $hasAmdGpu = $sysInfoGPU | Where-Object { $_ -like '*AMD*' -or $_ -like '*Radeon*' }
+    $hasIntelGpu = $sysInfoGPU | Where-Object { $_ -like '*Intel*' -and ($_ -like '*HD Graphics*' -or $_ -like '*UHD Graphics*' -or $_ -like '*Iris*' -or $_ -like '*Arc*') }
+    # $hasIntelGpu = $sysInfoGPU | Where-Object { $_ -like '*Intel*' } # Pripadne jednodussi detekce Intelu
 
+    $pageOpened = $false # Praporek, zda jsme otevřeli aspon jednu stranku
+
+    # Definice URL adres
+    $nvidiaUrl = "https://www.nvidia.com/en-us/drivers/"
+    $amdUrl = "https://www.amd.com/en/support/download/drivers.html"
+    $intelUrl = "https://www.intel.com/content/www/us/en/download-center/home.html"
+
+    # 2. Otevreni stranek podle detekce
     if ($hasNvidia) {
-        Write-Host "`nDetekovana graficka karta NVIDIA." -ForegroundColor Cyan
-        Write-Log "Detekovana GPU NVIDIA: $($sysInfoGPU -join '; ')" "INFO" -NoConsole
-        if (Get-Confirmation "Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart)") {
-            Write-Log "Uzivatel potvrdil pokus o aktualizaci ovladace NVIDIA pres Choco." "WARN"
-            Start-ProcessWait "choco" "upgrade geforce-game-ready-driver -y --ignore-checksums" "Aktualizace ovladace NVIDIA (Game Ready)"
+        Write-Host "- Nalezena graficka karta NVIDIA." -ForegroundColor Green # Bez diakritiky
+        Write-Host "  Oteviram stranku Nvidia pro stazeni ovladacu..." -ForegroundColor Cyan # Bez diakritiky
+        Write-Log "Detekovana NVIDIA GPU. Oteviram $nvidiaUrl" "INFO" -NoConsole
+        try {
+            Start-Process $nvidiaUrl
+            $pageOpened = $true
+            Start-Sleep -Seconds 1 # Mala pauza mezi otviranim
+        } catch {
+            Write-Log "Chyba pri otevirani stranky NVIDIA: $($_.Exception.Message)" "ERROR"
+            Write-Warning "Nepodarilo se otevrit stranku NVIDIA: $($_.Exception.Message)"
         }
     }
-    elseif ($hasAmdGpu) {
-        Write-Host "`nDetekovana graficka karta AMD." -ForegroundColor Cyan
-        Write-Log "Detekovana GPU AMD: $($sysInfoGPU -join '; ')" "INFO" -NoConsole
-        Write-Host "Pro graficke karty AMD Chocolatey nema vzdy spolehlivy balicek." -ForegroundColor Yellow
-        Write-Host "Doporucuje se stahnout ovladace primo od vyrobce." -ForegroundColor Yellow
-        Write-Host "Navstivte oficialni stranku pro stazeni:" -ForegroundColor Cyan
-        Write-Host "https://www.amd.com/en/support/download/drivers.html" -ForegroundColor White
-        Write-Log "Zobrazen odkaz na stazeni ovladacu AMD." "INFO" -NoConsole
-    }
-    else {
-        Write-Host "`nNebyla detekovana podporovana graficka karta NVIDIA nebo AMD pro automatickou akci." -ForegroundColor Gray
-        Write-Log "Nebyla detekovana GPU NVIDIA ani AMD v '$($sysInfoGPU -join '; ')'." "INFO" -NoConsole
+
+    if ($hasAmdGpu) {
+        Write-Host "- Nalezena graficka karta AMD." -ForegroundColor Green # Bez diakritiky
+        Write-Host "  Oteviram stranku AMD pro stazeni ovladacu..." -ForegroundColor Cyan # Bez diakritiky
+        Write-Log "Detekovana AMD GPU. Oteviram $amdUrl" "INFO" -NoConsole
+        try {
+            Start-Process $amdUrl
+            $pageOpened = $true
+            Start-Sleep -Seconds 1 # Mala pauza mezi otviranim
+        } catch {
+            Write-Log "Chyba pri otevirani stranky AMD: $($_.Exception.Message)" "ERROR"
+            Write-Warning "Nepodarilo se otevrit stranku AMD: $($_.Exception.Message)"
+        }
     }
 
-    # 3. Nabidka pro AMD Chipset (nezavisle na GPU)
-    Write-Host "`n--- Ovladače čipsetu AMD Ryzen ---"
-    Write-Log "Nabidka aktualizace ovladacu cipsetu AMD Ryzen." "INFO" -NoConsole
-    if (Get-Confirmation "Chcete se POKUSIT aktualizovat ovladace cipsetu AMD Ryzen pomoci Chocolatey? (Relevantni POUZE pokud mate CPU/cipset AMD Ryzen!)") {
-         Write-Log "Uzivatel potvrdil pokus o aktualizaci ovladacu cipsetu AMD Ryzen pres Choco." "WARN"
-         Start-ProcessWait "choco" "upgrade amd-ryzen-chipset -y --ignore-checksums" "Aktualizace ovladacu cipsetu AMD Ryzen"
+    if ($hasIntelGpu) {
+        Write-Host "- Nalezena graficka karta Intel." -ForegroundColor Green
+        Write-Host "  Oteviram stranku Intel pro stazeni ovladacu..." -ForegroundColor Cyan
+        Write-Log "Detekovana Intel GPU. Oteviram $intelUrl" "INFO" -NoConsole
+        try {
+            Start-Process $intelUrl
+            $pageOpened = $true
+            Start-Sleep -Seconds 2 # Mala pauza mezi otviranim
+        } catch {
+            Write-Log "Chyba pri otevirani stranky Intel: $($_.Exception.Message)" "ERROR"
+            Write-Warning "Nepodarilo se otevrit stranku Intel: $($_.Exception.Message)"
+        }
     }
 
-    Write-Host "`nAkce souvisejici s ovladaci dokonceny (nebo preskoceny)."
-    Write-Log "Ukoncena funkce Install-DriversExperimental (v3 - oprava auto Choco install)." "INFO" -NoConsole
+    # 3. Zprava pokud nic nebylo nalezeno/otevreno
+    if (-not $pageOpened) {
+        Write-Host "`nNepodarilo se detekovat grafickou kartu Nvidia, AMD nebo Intel," -ForegroundColor Yellow # Bez diakritiky
+        Write-Host "nebo nastala chyba pri otevirani stranek." -ForegroundColor Yellow # Bez diakritiky
+        Write-Log "Nebyly detekovany podporovane GPU nebo nastala chyba pri otevirani URL." "WARN"
+    } else {
+         Write-Host "`nStranky vyrobcu byly otevreny ve vasem vychozim webovem prohlizeci." -ForegroundColor Green # Bez diakritiky
+    }
+
+    Write-Log "Ukoncena funkce Show-DriverDownloadPages." "INFO" -NoConsole
 }
 # --- Hlavni cast skriptu ---
 
@@ -934,7 +957,7 @@ do {
     Write-Host " OS : $sysInfoOS" -ForegroundColor White
     Write-Host " CPU: $sysInfoCPU" -ForegroundColor White
     Write-Host " RAM: $sysInfoRAM" -ForegroundColor White
-    Write-Host " GPU: $($sysInfoGPU -join ', ')" -ForegroundColor White # Vypise grafiky oddelene carkou
+    Write-Host " GPU: $($sysInfoGPU -join ', ')" -ForegroundColor White
     Write-Host "----------------------------------------------" -ForegroundColor DarkGray
     Write-Host ""
 
@@ -942,53 +965,56 @@ do {
     Write-Host "==============================================" -ForegroundColor Cyan
     Write-Host "   WindowsAppTool (PowerShell verze)" -ForegroundColor Cyan
     Write-Host "==============================================" -ForegroundColor Cyan
-    Write-Host "Vyberte pozadovanou akci:"
-    Write-Host "  1. Instalovat vybrane aplikace"
-    Write-Host "  2. Aktualizovat vsechny aplikace"
-    Write-Host "  3. Aktualizovat Winget (Instalator aplikaci)"
-    Write-Host "  4. Odinstalovat aplikace Windows"
-    Write-Host "  5. Odinstalovat Microsoft Edge"
-    Write-Host "  6. Zobrazit typ licence Windows"
-    Write-Host "  7. Odinstalovat specifickou aplikaci (Vyber)"
-    Write-Host "  8. Konec"
-    Write-Host "  9. Instalovat/Aktualizovat ovladace (EXPERIMENTÁLNÍ!)" # <--- NOVÝ ŘÁDEK
+    Write-Host "Vyberte pozadovanou akci:" # Bez diakritiky
+    Write-Host "  1. Pruvodce nastavenim" # << NOVA POLOZKA Bez diakritiky
+    Write-Host "  ---------------------------------"
+    Write-Host "  2. Instalovat vybrane aplikace" # Drive 1 Bez diakritiky
+    Write-Host "  3. Aktualizovat vsechny aplikace" # Drive 2 Bez diakritiky
+    Write-Host "  4. Aktualizovat Winget (Instalator aplikaci)" # Drive 3 Bez diakritiky
+    Write-Host "  5. Odinstalovat aplikace Windows (Vyber)" # Drive 4 Bez diakritiky
+    Write-Host "  6. Odinstalovat Microsoft Edge" # Drive 5 Bez diakritiky
+    Write-Host "  7. Zobrazit typ licence Windows" # Drive 6 Bez diakritiky
+    Write-Host "  8. Odinstalovat specifickou aplikaci (Vyber)" # Drive 7 Bez diakritiky
+    Write-Host "  9. Otevrit stranky pro stazeni ovladacu GPU" # Drive 9 - zustava Bez diakritiky
+    Write-Host "  10. Konec" # << NOVA POLOZKA (Drive 8) Bez diakritiky
     Write-Host ""
-    $choice = Read-Host "Zadejte cislo volby (1-9)" # <--- ZMĚNA ROZSAHU (1-9)
+    $choice = Read-Host "Zadejte cislo volby (1-10)" # << ZMENA ROZSAHU Bez diakritiky
     Write-Log "Uzivatel zvolil v menu moznost: $choice" "INFO"
 
     try {
         switch ($choice) {
-            "1" { Install-BasicApps }
-            "2" { Update-AllApps }
-            "3" { Update-Winget }
-            "4" { Uninstall-Bloatware }
-            "5" { Uninstall-Edge }
-            "6" { Show-WindowsLicenseType }
-            "7" { Uninstall-SelectedApps }
-            "8" {
+            "1" { Start-WizardMode }            # << NOVY CASE
+            "2" { Install-BasicApps }           # Drive 1
+            "3" { Update-AllApps }              # Drive 2
+            "4" { Update-Winget }               # Drive 3
+            "5" { Uninstall-Bloatware }         # Drive 4
+            "6" { Uninstall-Edge }              # Drive 5
+            "7" { Show-WindowsLicenseType }     # Drive 6
+            "8" { Uninstall-SelectedApps }      # Drive 7
+            "9" { Show-DriverDownloadPages }    # Drive 9 - zustava
+            "10" {                              # << ZMENA CISLA (Drive 8)
                 Write-Log "Uzivatel zvolil konec skriptu. Ukoncuji." "INFO"
-                Write-Host "Skript ukoncen."
+                Write-Host "Skript ukoncen." # Bez diakritiky
                 exit 0 # Ukonci script a zavre okno
             }
-            "9" { Install-DriversExperimental } # <--- NOVÝ ŘÁDEK
             default {
                 Write-Log "Neplatna volba menu: '$choice'." "WARN"
-                Write-Warning "Neplatna volba '$choice'. Zkuste to znovu."
+                Write-Warning "Neplatna volba '$choice'. Zkuste to znovu." # Bez diakritiky
                 Start-Sleep -Seconds 2
             }
         }# end switch
 
-        # Pockame na uzivatele pred zobrazenim menu znovu (pokud jsme neukoncili pres exit)
-         Read-Host "`nAkce dokoncena. Stisknete Enter pro navrat do hlavniho menu..."
+        # Pockame na uzivatele pred zobrazenim menu znovu (pokud jsme neukoncili pres exit nebo pruvodce)
+         Read-Host "`nAkce dokoncena. Stisknete Enter pro navrat do hlavniho menu..." # Bez diakritiky
 
     } catch {
-         $logMsg = "`n! NEOČEKAVANA CHYBA SKRIPTU: $($_.Exception.Message) | Cil: $($_.TargetObject) | Radek: $($_.InvocationInfo.ScriptLineNumber)"
+         $logMsg = "`n! NEOCEKAVANA CHYBA SKRIPTU: $($_.Exception.Message) | Cil: $($_.TargetObject) | Radek: $($_.InvocationInfo.ScriptLineNumber)" # Bez diakritiky
          Write-Log $logMsg "ERROR"
          Write-Error $logMsg
-         Read-Host "Stisknete Enter pro navrat do hlavniho menu..."
+         Read-Host "Stisknete Enter pro navrat do hlavniho menu..." # Bez diakritiky
     }
 
-} while (-not $exitLoop) # Smycka by technicky mela bezet porad, dokud se neukonci pres exit
+} while (-not $exitLoop) # Smycka by technicky mela bezet porad, dokud se neukonci
 
 # --- Konec skriptu ---
 Write-Log "================ Ukonceni logovani skriptu ================" "INFO"

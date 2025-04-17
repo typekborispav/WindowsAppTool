@@ -467,3 +467,322 @@ Unexpected attribute 'Parameter'. | Cil:  | Radek: 967
 [2025-04-16 18:57:14] [WARN] Uzivatel potvrdil pokus o aktualizaci ovladace NVIDIA pres Choco.
 [2025-04-16 18:57:14] [INFO] Spoustim proces: 'choco' s argumenty 'upgrade geforce-game-ready-driver -y --ignore-checksums' pro akci 'Aktualizace ovladace NVIDIA (Game Ready)'
 [2025-04-16 18:57:14] [INFO] Provadim akci: Aktualizace ovladace NVIDIA (Game Ready)...
+[2025-04-16 19:08:46] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-16 19:08:46] [INFO] Spoustim script: WindowsAppTool
+[2025-04-16 19:08:46] [DEBUG] Kontrola administratorskych prav...
+[2025-04-16 19:08:46] [INFO] Kontrola admin prav uspesna.
+[2025-04-16 19:08:47] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-16 19:08:47] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-16 19:08:48] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-16 19:08:48] [INFO] Nacitam zakladni systemove informace...
+[2025-04-16 19:08:55] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-16 19:08:58] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 19:08:58] [INFO] Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:08:58] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 19:08:59] [INFO] Chocolatey nalezeno: C:\ProgramData\chocolatey\bin\choco.exe
+[2025-04-16 19:09:00] [INFO] Detekovana GPU NVIDIA: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-16 19:09:00] [DEBUG] Cekam na potvrzeni uzivatele: 'Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart) (A/N)'
+[2025-04-16 19:09:12] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-16 19:09:12] [INFO] Nabidka aktualizace ovladacu cipsetu AMD Ryzen.
+[2025-04-16 19:09:12] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se POKUSIT aktualizovat ovladace cipsetu AMD Ryzen pomoci Chocolatey? (Relevantni POUZE pokud mate CPU/cipset AMD Ryzen!) (A/N)'
+[2025-04-16 19:09:18] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 19:09:18] [WARN] Uzivatel potvrdil pokus o aktualizaci ovladacu cipsetu AMD Ryzen pres Choco.
+[2025-04-16 19:09:18] [INFO] Spoustim proces: 'choco' s argumenty 'upgrade amd-ryzen-chipset -y --ignore-checksums' pro akci 'Aktualizace ovladacu cipsetu AMD Ryzen'
+[2025-04-16 19:09:18] [INFO] Provadim akci: Aktualizace ovladacu cipsetu AMD Ryzen...
+[2025-04-16 19:09:47] [WARN] Aktualizace ovladacu cipsetu AMD Ryzen: Proces skoncil s chybovym kodem -1.
+[2025-04-16 19:09:47] [INFO] Ukoncena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:09:57] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 19:09:57] [INFO] Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:09:57] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 19:09:57] [INFO] Chocolatey nalezeno: C:\ProgramData\chocolatey\bin\choco.exe
+[2025-04-16 19:09:58] [INFO] Detekovana GPU NVIDIA: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-16 19:09:58] [DEBUG] Cekam na potvrzeni uzivatele: 'Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart) (A/N)'
+[2025-04-16 19:10:02] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-16 19:10:02] [INFO] Nabidka aktualizace ovladacu cipsetu AMD Ryzen.
+[2025-04-16 19:10:02] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se POKUSIT aktualizovat ovladace cipsetu AMD Ryzen pomoci Chocolatey? (Relevantni POUZE pokud mate CPU/cipset AMD Ryzen!) (A/N)'
+[2025-04-16 19:10:06] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 19:10:06] [WARN] Uzivatel potvrdil pokus o aktualizaci ovladacu cipsetu AMD Ryzen pres Choco.
+[2025-04-16 19:10:06] [INFO] Spoustim proces: 'choco' s argumenty 'upgrade amd-ryzen-chipset -y --ignore-checksums' pro akci 'Aktualizace ovladacu cipsetu AMD Ryzen'
+[2025-04-16 19:10:06] [INFO] Provadim akci: Aktualizace ovladacu cipsetu AMD Ryzen...
+[2025-04-16 19:10:16] [WARN] Aktualizace ovladacu cipsetu AMD Ryzen: Proces skoncil s chybovym kodem -1.
+[2025-04-16 19:10:16] [INFO] Ukoncena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:10:38] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 19:10:38] [INFO] Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:10:38] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 19:10:38] [INFO] Chocolatey nalezeno: C:\ProgramData\chocolatey\bin\choco.exe
+[2025-04-16 19:10:39] [INFO] Detekovana GPU NVIDIA: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-16 19:10:39] [DEBUG] Cekam na potvrzeni uzivatele: 'Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart) (A/N)'
+[2025-04-16 19:10:42] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 19:10:42] [WARN] Uzivatel potvrdil pokus o aktualizaci ovladace NVIDIA pres Choco.
+[2025-04-16 19:10:42] [INFO] Spoustim proces: 'choco' s argumenty 'upgrade geforce-game-ready-driver -y --ignore-checksums' pro akci 'Aktualizace ovladace NVIDIA (Game Ready)'
+[2025-04-16 19:10:42] [INFO] Provadim akci: Aktualizace ovladace NVIDIA (Game Ready)...
+[2025-04-16 19:10:47] [INFO] Aktualizace ovladace NVIDIA (Game Ready): Proces uspesne dokoncen (Kod 0).
+[2025-04-16 19:10:47] [INFO] Nabidka aktualizace ovladacu cipsetu AMD Ryzen.
+[2025-04-16 19:10:47] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se POKUSIT aktualizovat ovladace cipsetu AMD Ryzen pomoci Chocolatey? (Relevantni POUZE pokud mate CPU/cipset AMD Ryzen!) (A/N)'
+[2025-04-16 19:10:55] [DEBUG] Uzivatel odpovedel: 'N'
+[2025-04-16 19:10:55] [INFO] Ukoncena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:18:42] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-16 19:18:42] [INFO] Spoustim script: WindowsAppTool
+[2025-04-16 19:18:42] [DEBUG] Kontrola administratorskych prav...
+[2025-04-16 19:18:42] [INFO] Kontrola admin prav uspesna.
+[2025-04-16 19:18:43] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-16 19:18:43] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-16 19:18:43] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-16 19:18:43] [INFO] Nacitam zakladni systemove informace...
+[2025-04-16 19:18:49] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-16 19:18:57] [INFO] Uzivatel zvolil v menu moznost: 2
+[2025-04-16 19:18:57] [INFO] Zahajena funkce Update-AllApps.
+[2025-04-16 19:18:57] [INFO] Spoustim proces: 'winget' s argumenty 'upgrade --all --accept-package-agreements --accept-source-agreements --disable-interactivity --verbose' pro akci 'Aktualizace vsech aplikaci'
+[2025-04-16 19:18:57] [INFO] Provadim akci: Aktualizace vsech aplikaci...
+[2025-04-16 19:21:01] [INFO] Aktualizace vsech aplikaci: Proces uspesne dokoncen (Kod 0).
+[2025-04-16 19:21:01] [INFO] Dokoncen pokus o aktualizaci vsech aplikaci.
+[2025-04-16 19:21:01] [INFO] Ukoncena funkce Update-AllApps.
+[2025-04-16 19:35:36] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-16 19:35:37] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-16 19:35:37] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-16 19:35:47] [INFO] Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni).
+[2025-04-16 19:35:47] [WARN] Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena.
+[2025-04-16 19:36:13] [INFO] Uzivatel zvolil v menu moznost: 7
+[2025-04-16 19:36:13] [INFO] Zahajena funkce Uninstall-SelectedApps.
+[2025-04-16 19:36:13] [INFO] Spoustim 'winget list' pro ziskani seznamu aplikaci.
+[2025-04-16 19:36:17] [DEBUG] Vystup z 'winget list' zachycen, pocet radku: 94.
+[2025-04-16 19:36:17] [DEBUG] Zacinam parsovat vystup 'winget list' od radku 11.
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'MiniRoyale                                    ARP\Machine\X64\Steam App 1657090              Unknown            '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Polda                                         ARP\Machine\X64\Steam App 2762710              Unknown            '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Panelak                                       ARP\Machine\X64\Steam App 3333890              Unknown            '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'AtmaSphere                                    ARP\Machine\X64\Steam App 753660               Unknown            '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell Core Services                            ARP\Machine\X64\{5BD28C1E-9623-4005-83E0-87A0… 1.8.536.0          '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist                            ARP\Machine\X64\{AFB21E1B-1EE4-45A9-B584-F685… 4.8.1.27758        '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA Ovladače grafiky 572.83                ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 572.83             '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Aplikace NVIDIA 11.0.3.218                    ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 11.0.3.218         '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA Systémový software PhysX 9.23.1019     ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 9.23.1019          '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA FrameView SDK 1.5.10920.35420203       ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 1.5.10920.35420203 '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA USBC Driver 1.52.831.832               ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 1.52.831.832       '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Medal of Honor - Allied Assault (CZ Dabing +… ARP\Machine\X86\FPD_MoH-AA_is1                 1.0                '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist OS Recovery Plugin for De… ARP\Machine\X86\{720a2ba7-49f7-4f23-a550-abf1… 5.5.13.1           '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell Optimizer                                ARP\Machine\X86\{CC40119D-6ADF-4832-8025-4808… 6.0.2.0            '
+[2025-04-16 19:36:17] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist Remediation                ARP\Machine\X86\{d4884bf5-bb68-4f08-9c4a-5825… 5.5.13.1           '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Ovládací centrum grafiky Intel®               MSIX\AppUp.IntelGraphicsExperience_1.100.5688… 1.100.5688.0       '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell Command | Update                         MSIX\DellInc.DellCommandUpdate_5.4.22.0_x86__… 5.4.22.0           '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist for Home PCs               MSIX\DellInc.DellSupportAssistforPCs_4.8.1.0_… 4.8.1.0            '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'AV1 Video Extension                           MSIX\Microsoft.AV1VideoExtension_1.3.4.0_x64_… 1.3.4.0            '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro AVC kodér videa                 MSIX\Microsoft.AVCEncoderVideoExtension_1.1.1… 1.1.17.0           '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Vylepšení kompatibility aplikací systému Win… MSIX\Microsoft.ApplicationCompatibilityEnhanc… 1.2411.16.0        '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Copilot                                       MSIX\Microsoft.Copilot_1.25032.167.0_x64__8we… 1.25032.167.0      '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'HEIF Image Extensions                         MSIX\Microsoft.HEIFImageExtension_1.2.3.0_x64… 1.2.3.0            '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro video HEVC od výrobce zařízení  MSIX\Microsoft.HEVCVideoExtension_2.2.33.0_x6… 2.2.33.0           '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Sada pro místní prostředí v češtině           MSIX\Microsoft.LanguageExperiencePackcs-CZ_26… 26100.26.42.0      '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro video MPEG-2                    MSIX\Microsoft.MPEG2VideoExtension_1.0.61931.… 1.0.61931.0        '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Edge                                MSIX\Microsoft.MicrosoftEdge.Stable_134.0.312… 134.0.3124.93      '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Framework Package 2.2   MSIX\Microsoft.NET.Native.Framework.2.2_2.2.2… 2.2.29512.0        '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Framework Package 2.2   MSIX\Microsoft.NET.Native.Framework.2.2_2.2.2… 2.2.29512.0        '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Runtime Package 2.2     MSIX\Microsoft.NET.Native.Runtime.2.2_2.2.286… 2.2.28604.0        '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Runtime Package 2.2     MSIX\Microsoft.NET.Native.Runtime.2.2_2.2.286… 2.2.28604.0        '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Malování                                      MSIX\Microsoft.Paint_11.2502.161.0_x64__8weky… 11.2502.161.0      '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Raw Image Extension                           MSIX\Microsoft.RawImageExtension_2.5.3.0_x64_… 2.5.3.0            '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Výstřižky                                     MSIX\Microsoft.ScreenSketch_11.2502.18.0_x64_… 11.2502.18.0       '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Zabezpečení Windows                           MSIX\Microsoft.SecHealthUI_1000.27703.1006.0_… 1000.27703.1006.0  '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Hostitel prostředí Storu                      MSIX\Microsoft.StorePurchaseApp_22502.1401.1.… 22502.1401.1.0     '
+[2025-04-16 19:36:18] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Visual C++ 2015 UWP Runtime Package MSIX\Microsoft.VCLibs.140.00_14.0.33519.0_x64… 14.0.33519.0       '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Visual C++ 2015 UWP Runtime Package MSIX\Microsoft.VCLibs.140.00_14.0.33519.0_x86… 14.0.33519.0       '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'VP9 Video Extensions                          MSIX\Microsoft.VP9VideoExtensions_1.2.2.0_x64… 1.2.2.0            '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro webová média                    MSIX\Microsoft.WebMediaExtensions_1.1.1295.0_… 1.1.1295.0         '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Webp Image Extensions                         MSIX\Microsoft.WebpImageExtension_1.1.1711.0_… 1.1.1711.0         '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Fotografie                          MSIX\Microsoft.Windows.Photos_2025.11030.1200… 2025.11030.12002.0 '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.5                         MSIX\Microsoft.WindowsAppRuntime.1.5_5001.373… 5001.373.1736.0    '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.5                         MSIX\Microsoft.WindowsAppRuntime.1.5_5001.373… 5001.373.1736.0    '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.6                         MSIX\Microsoft.WindowsAppRuntime.1.6_6000.457… 6000.457.2140.0    '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.6                         MSIX\Microsoft.WindowsAppRuntime.1.6_6000.457… 6000.457.2140.0    '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Kalkulačka                            MSIX\Microsoft.WindowsCalculator_11.2502.2.0_… 11.2502.2.0        '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Kamera                                MSIX\Microsoft.WindowsCamera_2025.2501.1.0_x6… 2025.2501.1.0      '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Poznámkový blok                       MSIX\Microsoft.WindowsNotepad_11.2501.31.0_x6… 11.2501.31.0       '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Store                               MSIX\Microsoft.WindowsStore_22502.1401.11.0_x… 22502.1401.11.0    '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Package Manager Source (winget) V2    MSIX\Microsoft.Winget.Source_2025.416.1419.39… 2025.416.1419.39   '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Xbox Identity Provider                        MSIX\Microsoft.XboxIdentityProvider_12.115.10… 12.115.1001.0      '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Game Speech Window                            MSIX\Microsoft.XboxSpeechToTextOverlay_1.97.1… 1.97.17002.0       '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Web Experience Pack                   MSIX\MicrosoftWindows.Client.WebExperience_52… 525.5100.40.0      '
+[2025-04-16 19:36:19] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA Control Panel                          MSIX\NVIDIACorp.NVIDIAControlPanel_8.1.967.0_… 8.1.967.0          '
+[2025-04-16 19:36:19] [INFO] Zpracovani vystupu 'winget list' dokonceno. Nalezeno 27 aplikaci pro vyber.
+[2025-04-16 19:36:42] [WARN] Uzivatel nevybral zadne aplikace k odinstalaci nebo zavrel okno.
+[2025-04-16 19:36:50] [INFO] Uzivatel zvolil v menu moznost: 3
+[2025-04-16 19:36:50] [INFO] Zahajena funkce Update-Winget.
+[2025-04-16 19:36:50] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete pokracovat? (A/N)'
+[2025-04-16 19:36:53] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-16 19:36:53] [INFO] Spoustim proces: 'winget' s argumenty 'upgrade Microsoft.AppInstaller --include-unknown --accept-package-agreements --disable-interactivity' pro akci 'Aktualizace Winget'
+[2025-04-16 19:36:53] [INFO] Provadim akci: Aktualizace Winget...
+[2025-04-16 19:36:58] [WARN] Aktualizace Winget: Proces skoncil s chybovym kodem -1978335189.
+[2025-04-16 19:36:58] [INFO] Dokoncen pokus o aktualizaci Winget.
+[2025-04-16 19:36:58] [INFO] Ukoncena funkce Update-Winget.
+[2025-04-16 19:37:06] [INFO] Uzivatel zvolil v menu moznost: 6
+[2025-04-16 19:37:06] [INFO] Zahajena funkce Show-WindowsLicenseType.
+[2025-04-16 19:37:06] [INFO] Zjistovani informaci o licenci pres WMI...
+[2025-04-16 19:37:06] [DEBUG] Hledam licenci pro AppID: 55c92734-d682-4d71-983e-d6ec3f16059f
+[2025-04-16 19:37:10] [INFO] Nalezen popis licence: 'Windows(R) Operating System, RETAIL channel'
+[2025-04-16 19:37:10] [INFO] Typ licence identifikovan jako Retail z popisu.
+[2025-04-16 19:37:10] [DEBUG] Kontroluji pritomnost OA3xOriginalProductKey...
+[2025-04-16 19:37:11] [INFO] Nalezen OA3xOriginalProductKey (silna indikace OEM).
+[2025-04-16 19:37:11] [INFO] Vysledny zjisteny typ licence: Retail
+[2025-04-16 19:37:11] [INFO] Ukoncena funkce Show-WindowsLicenseType.
+[2025-04-16 19:37:40] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-16 19:37:40] [INFO] Zahajena funkce Uninstall-Bloatware (verze s vyberem - aktualizovany seznam, bez diakritiky, FlowLayout).
+[2025-04-16 19:37:40] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-16 19:37:56] [INFO] Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni).
+[2025-04-16 19:37:56] [WARN] Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena.
+[2025-04-16 19:48:25] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-16 19:48:25] [INFO] Spoustim script: WindowsAppTool
+[2025-04-16 19:48:25] [DEBUG] Kontrola administratorskych prav...
+[2025-04-16 19:48:25] [INFO] Kontrola admin prav uspesna.
+[2025-04-16 19:48:26] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-16 19:48:26] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-16 19:48:27] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-16 19:48:27] [INFO] Nacitam zakladni systemove informace...
+[2025-04-16 19:48:33] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-16 19:48:40] [INFO] Uzivatel zvolil v menu moznost: 7
+[2025-04-16 19:48:40] [INFO] Zahajena funkce Uninstall-SelectedApps.
+[2025-04-16 19:48:40] [INFO] Spoustim 'winget list' pro ziskani seznamu aplikaci.
+[2025-04-16 19:48:44] [DEBUG] Vystup z 'winget list' zachycen, pocet radku: 96.
+[2025-04-16 19:48:44] [DEBUG] Zacinam parsovat vystup 'winget list' od radku 13.
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'MiniRoyale                                    ARP\Machine\X64\Steam App 1657090              Unknown            '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Polda                                         ARP\Machine\X64\Steam App 2762710              Unknown            '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Panelak                                       ARP\Machine\X64\Steam App 3333890              Unknown            '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'AtmaSphere                                    ARP\Machine\X64\Steam App 753660               Unknown            '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell Core Services                            ARP\Machine\X64\{5BD28C1E-9623-4005-83E0-87A0… 1.8.536.0          '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist                            ARP\Machine\X64\{AFB21E1B-1EE4-45A9-B584-F685… 4.8.1.27758        '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA Ovladače grafiky 572.83                ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 572.83             '
+[2025-04-16 19:48:44] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Aplikace NVIDIA 11.0.3.218                    ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 11.0.3.218         '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA Systémový software PhysX 9.23.1019     ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 9.23.1019          '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA FrameView SDK 1.5.10920.35420203       ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 1.5.10920.35420203 '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA USBC Driver 1.52.831.832               ARP\Machine\X64\{B2FE1952-0186-46C3-BAEC-A80A… 1.52.831.832       '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Medal of Honor - Allied Assault (CZ Dabing +… ARP\Machine\X86\FPD_MoH-AA_is1                 1.0                '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist OS Recovery Plugin for De… ARP\Machine\X86\{720a2ba7-49f7-4f23-a550-abf1… 5.5.13.1           '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell Optimizer                                ARP\Machine\X86\{CC40119D-6ADF-4832-8025-4808… 6.0.2.0            '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist Remediation                ARP\Machine\X86\{d4884bf5-bb68-4f08-9c4a-5825… 5.5.13.1           '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Ovládací centrum grafiky Intel®               MSIX\AppUp.IntelGraphicsExperience_1.100.5688… 1.100.5688.0       '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell Command | Update                         MSIX\DellInc.DellCommandUpdate_5.4.22.0_x86__… 5.4.22.0           '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Dell SupportAssist for Home PCs               MSIX\DellInc.DellSupportAssistforPCs_4.8.1.0_… 4.8.1.0            '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'AV1 Video Extension                           MSIX\Microsoft.AV1VideoExtension_1.3.4.0_x64_… 1.3.4.0            '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro AVC kodér videa                 MSIX\Microsoft.AVCEncoderVideoExtension_1.1.1… 1.1.17.0           '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Vylepšení kompatibility aplikací systému Win… MSIX\Microsoft.ApplicationCompatibilityEnhanc… 1.2411.16.0        '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Copilot                                       MSIX\Microsoft.Copilot_1.25034.135.0_x64__8we… 1.25034.135.0      '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'HEIF Image Extensions                         MSIX\Microsoft.HEIFImageExtension_1.2.3.0_x64… 1.2.3.0            '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro video HEVC od výrobce zařízení  MSIX\Microsoft.HEVCVideoExtension_2.2.33.0_x6… 2.2.33.0           '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Sada pro místní prostředí v češtině           MSIX\Microsoft.LanguageExperiencePackcs-CZ_26… 26100.26.42.0      '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro video MPEG-2                    MSIX\Microsoft.MPEG2VideoExtension_1.0.61931.… 1.0.61931.0        '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Edge                                MSIX\Microsoft.MicrosoftEdge.Stable_134.0.312… 134.0.3124.93      '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Framework Package 2.2   MSIX\Microsoft.NET.Native.Framework.2.2_2.2.2… 2.2.29512.0        '
+[2025-04-16 19:48:45] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Framework Package 2.2   MSIX\Microsoft.NET.Native.Framework.2.2_2.2.2… 2.2.29512.0        '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Runtime Package 2.2     MSIX\Microsoft.NET.Native.Runtime.2.2_2.2.286… 2.2.28604.0        '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft .Net Native Runtime Package 2.2     MSIX\Microsoft.NET.Native.Runtime.2.2_2.2.286… 2.2.28604.0        '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Malování                                      MSIX\Microsoft.Paint_11.2502.161.0_x64__8weky… 11.2502.161.0      '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Raw Image Extension                           MSIX\Microsoft.RawImageExtension_2.5.5.0_x64_… 2.5.5.0            '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Výstřižky                                     MSIX\Microsoft.ScreenSketch_11.2502.18.0_x64_… 11.2502.18.0       '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Zabezpečení Windows                           MSIX\Microsoft.SecHealthUI_1000.27703.1006.0_… 1000.27703.1006.0  '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Hostitel prostředí Storu                      MSIX\Microsoft.StorePurchaseApp_22502.1401.1.… 22502.1401.1.0     '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Visual C++ 2015 UWP Runtime Package MSIX\Microsoft.VCLibs.140.00_14.0.33519.0_x64… 14.0.33519.0       '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Visual C++ 2015 UWP Runtime Package MSIX\Microsoft.VCLibs.140.00_14.0.33519.0_x86… 14.0.33519.0       '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'VP9 Video Extensions                          MSIX\Microsoft.VP9VideoExtensions_1.2.2.0_x64… 1.2.2.0            '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření pro webová média                    MSIX\Microsoft.WebMediaExtensions_1.1.1295.0_… 1.1.1295.0         '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Rozšíření WebP Image                          MSIX\Microsoft.WebpImageExtension_1.2.10.0_x6… 1.2.10.0           '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Fotografie                          MSIX\Microsoft.Windows.Photos_2025.11030.2700… 2025.11030.27002.0 '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.5                         MSIX\Microsoft.WindowsAppRuntime.1.5_5001.373… 5001.373.1736.0    '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.5                         MSIX\Microsoft.WindowsAppRuntime.1.5_5001.373… 5001.373.1736.0    '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.6                         MSIX\Microsoft.WindowsAppRuntime.1.6_6000.457… 6000.457.2140.0    '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'WindowsAppRuntime.1.6                         MSIX\Microsoft.WindowsAppRuntime.1.6_6000.457… 6000.457.2140.0    '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Kalkulačka                            MSIX\Microsoft.WindowsCalculator_11.2502.2.0_… 11.2502.2.0        '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Kamera                                MSIX\Microsoft.WindowsCamera_2025.2501.1.0_x6… 2025.2501.1.0      '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Poznámkový blok                       MSIX\Microsoft.WindowsNotepad_11.2501.31.0_x6… 11.2501.31.0       '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Microsoft Store                               MSIX\Microsoft.WindowsStore_22502.1401.11.0_x… 22502.1401.11.0    '
+[2025-04-16 19:48:46] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Package Manager Source (winget) V2    MSIX\Microsoft.Winget.Source_2025.416.1419.39… 2025.416.1419.39   '
+[2025-04-16 19:48:47] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Xbox Identity Provider                        MSIX\Microsoft.XboxIdentityProvider_12.115.10… 12.115.1001.0      '
+[2025-04-16 19:48:47] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Game Speech Window                            MSIX\Microsoft.XboxSpeechToTextOverlay_1.97.1… 1.97.17002.0       '
+[2025-04-16 19:48:47] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'Windows Web Experience Pack                   MSIX\MicrosoftWindows.Client.WebExperience_52… 525.5100.40.0      '
+[2025-04-16 19:48:47] [WARN] Radek vystupu 'winget list' neodpovida ocekavanemu formatu: 'NVIDIA Control Panel                          MSIX\NVIDIACorp.NVIDIAControlPanel_8.1.967.0_… 8.1.967.0          '
+[2025-04-16 19:48:47] [INFO] Zpracovani vystupu 'winget list' dokonceno. Nalezeno 27 aplikaci pro vyber.
+[2025-04-16 19:48:59] [WARN] Uzivatel nevybral zadne aplikace k odinstalaci nebo zavrel okno.
+[2025-04-16 19:51:04] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-16 19:51:04] [INFO] Zahajena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:51:04] [INFO] Kontrola dostupnosti nastroje Chocolatey...
+[2025-04-16 19:51:04] [INFO] Chocolatey nalezeno: C:\ProgramData\chocolatey\bin\choco.exe
+[2025-04-16 19:51:05] [INFO] Detekovana GPU NVIDIA: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-16 19:51:05] [DEBUG] Cekam na potvrzeni uzivatele: 'Pokusit se aktualizovat ovladac NVIDIA Game Ready pres Chocolatey? (Muze trvat dlouho, muze vyzadovat restart) (A/N)'
+[2025-04-16 19:51:09] [DEBUG] Uzivatel odpovedel: 'n'
+[2025-04-16 19:51:09] [INFO] Nabidka aktualizace ovladacu cipsetu AMD Ryzen.
+[2025-04-16 19:51:09] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete se POKUSIT aktualizovat ovladace cipsetu AMD Ryzen pomoci Chocolatey? (Relevantni POUZE pokud mate CPU/cipset AMD Ryzen!) (A/N)'
+[2025-04-16 19:51:11] [DEBUG] Uzivatel odpovedel: 'n'
+[2025-04-16 19:51:11] [INFO] Ukoncena funkce Install-DriversExperimental (v3 - oprava auto Choco install).
+[2025-04-16 19:51:18] [INFO] Uzivatel zvolil v menu moznost: 8
+[2025-04-16 19:51:18] [INFO] Uzivatel zvolil konec skriptu. Ukoncuji.
+[2025-04-17 03:38:43] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-17 03:38:43] [INFO] Spoustim script: WindowsAppTool
+[2025-04-17 03:38:43] [DEBUG] Kontrola administratorskych prav...
+[2025-04-17 03:38:43] [INFO] Kontrola admin prav uspesna.
+[2025-04-17 03:38:44] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-17 03:38:44] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-17 03:38:44] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-17 03:38:44] [INFO] Nacitam zakladni systemove informace...
+[2025-04-17 03:38:50] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-17 03:38:57] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-17 03:38:57] [INFO] Zahajena funkce Show-DriverDownloadPages.
+[2025-04-17 03:38:57] [INFO] Detekuji GPU z: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-17 03:38:57] [INFO] Detekovana NVIDIA GPU. Oteviram https://www.nvidia.com/en-us/drivers/
+[2025-04-17 03:38:58] [INFO] Detekovana Intel GPU. Oteviram https://www.intel.com/content/www/us/en/download-center/home.html
+[2025-04-17 03:38:59] [INFO] Ukoncena funkce Show-DriverDownloadPages.
+[2025-04-17 03:40:57] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-17 03:40:57] [INFO] Zahajena funkce Show-DriverDownloadPages.
+[2025-04-17 03:40:57] [INFO] Detekuji GPU z: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-17 03:40:57] [INFO] Detekovana NVIDIA GPU. Oteviram https://www.nvidia.com/en-us/drivers/
+[2025-04-17 03:40:58] [INFO] Detekovana Intel GPU. Oteviram https://www.intel.com/content/www/us/en/download-center/home.html
+[2025-04-17 03:40:59] [INFO] Ukoncena funkce Show-DriverDownloadPages.
+[2025-04-17 03:41:08] [INFO] Uzivatel zvolil v menu moznost: 8
+[2025-04-17 03:41:08] [INFO] Uzivatel zvolil konec skriptu. Ukoncuji.
+[2025-04-17 07:22:57] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-17 07:22:57] [INFO] Spoustim script: WindowsAppTool
+[2025-04-17 07:22:57] [DEBUG] Kontrola administratorskych prav...
+[2025-04-17 07:22:57] [INFO] Kontrola admin prav uspesna.
+[2025-04-17 07:22:58] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-17 07:22:58] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-17 07:22:58] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-17 07:22:58] [INFO] Nacitam zakladni systemove informace...
+[2025-04-17 07:23:04] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-17 07:23:16] [INFO] Uzivatel zvolil v menu moznost: 4
+[2025-04-17 07:23:16] [INFO] Zahajena funkce Uninstall-Bloatware (v5 - tlacitka Vse/Nic).
+[2025-04-17 07:23:16] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-17 07:23:36] [INFO] Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni).
+[2025-04-17 07:23:36] [WARN] Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena.
+[2025-04-17 07:35:55] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-17 07:35:55] [INFO] Spoustim script: WindowsAppTool
+[2025-04-17 07:35:55] [DEBUG] Kontrola administratorskych prav...
+[2025-04-17 07:35:55] [INFO] Kontrola admin prav uspesna.
+[2025-04-17 07:35:56] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-17 07:35:56] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-17 07:35:56] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-17 07:35:56] [INFO] Nacitam zakladni systemove informace...
+[2025-04-17 07:36:01] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-17 07:36:18] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-17 07:36:18] [INFO] Zahajena funkce Start-WizardMode (Pruvodce nastavenim - navrat do menu).
+[2025-04-17 07:36:18] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete spustit pruvodce nastavenim? (A/N)'
+[2025-04-17 07:36:27] [DEBUG] Uzivatel odpovedel: 'a'
+[2025-04-17 07:36:27] [INFO] Pruvodce - Krok 1: Instalace zakladnich aplikaci
+[2025-04-17 07:36:27] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-17 07:36:27] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-17 07:36:31] [DEBUG] Uzivatel potvrdil vyber v okne.
+[2025-04-17 07:36:31] [WARN] Uzivatel potvrdil OK, ale nevybral zadne aplikace.
+[2025-04-17 07:36:31] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-17 07:36:34] [INFO] Pruvodce - Krok 2: Odinstalace aplikaci Windows
+[2025-04-17 07:36:34] [INFO] Zahajena funkce Uninstall-Bloatware (v5 - tlacitka Vse/Nic).
+[2025-04-17 07:36:34] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-17 07:36:37] [INFO] Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni).
+[2025-04-17 07:36:37] [WARN] Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena.
+[2025-04-17 07:36:39] [INFO] Pruvodce - Krok 3: Odinstalace Microsoft Edge
+[2025-04-17 07:36:39] [INFO] Zahajena funkce Uninstall-Edge.
+[2025-04-17 07:36:39] [DEBUG] Cekam na specificke potvrzeni: 'Pro potvrzeni odinstalace Edge napiste presne 'ANO EDGE' (VyĹľadovĂˇno: 'ANO EDGE')'
+[2025-04-17 07:36:42] [DEBUG] Uzivatel zadal: ''
+[2025-04-17 07:36:42] [WARN] Potvrzeni 'ANO EDGE' NEBYLO zadano spravne.
+[2025-04-17 07:36:43] [INFO] Odinstalace Edge zrusena uzivatelem.
+[2025-04-17 07:36:45] [INFO] Pruvodce - Krok 4: Otevreni stranek pro ovladace GPU
+[2025-04-17 07:36:45] [INFO] Zahajena funkce Show-DriverDownloadPages.
+[2025-04-17 07:36:46] [INFO] Detekuji GPU z: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-17 07:36:46] [INFO] Detekovana NVIDIA GPU. Oteviram https://www.nvidia.com/en-us/drivers/
+[2025-04-17 07:36:47] [INFO] Detekovana Intel GPU. Oteviram https://www.intel.com/content/www/us/en/download-center/home.html
+[2025-04-17 07:36:49] [INFO] Ukoncena funkce Show-DriverDownloadPages.
+[2025-04-17 07:36:49] [INFO] Pruvodce nastavenim dokoncen.
