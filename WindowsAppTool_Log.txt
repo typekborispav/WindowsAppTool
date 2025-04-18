@@ -1,0 +1,107 @@
+﻿[2025-04-17 07:41:46] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-17 07:41:46] [INFO] Spoustim script: WindowsAppTool
+[2025-04-17 07:41:46] [DEBUG] Kontrola administratorskych prav...
+[2025-04-17 07:41:46] [INFO] Kontrola admin prav uspesna.
+[2025-04-17 07:41:47] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-17 07:41:47] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-17 07:41:47] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-17 07:41:47] [INFO] Nacitam zakladni systemove informace...
+[2025-04-17 07:41:52] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-17 07:42:02] [INFO] Uzivatel zvolil v menu moznost: 9
+[2025-04-17 07:42:03] [INFO] Zahajena funkce Show-DriverDownloadPages.
+[2025-04-17 07:42:03] [INFO] Detekuji GPU z: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-17 07:42:03] [INFO] Detekovana NVIDIA GPU. Oteviram https://www.nvidia.com/en-us/drivers/
+[2025-04-17 07:42:04] [INFO] Detekovana Intel GPU. Oteviram https://www.intel.com/content/www/us/en/download-center/home.html
+[2025-04-17 07:42:06] [INFO] Ukoncena funkce Show-DriverDownloadPages.
+[2025-04-17 07:44:00] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-17 07:44:00] [INFO] Spoustim script: WindowsAppTool
+[2025-04-17 07:44:00] [DEBUG] Kontrola administratorskych prav...
+[2025-04-17 07:44:00] [INFO] Kontrola admin prav uspesna.
+[2025-04-17 07:44:01] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-17 07:44:01] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-17 07:44:01] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-17 07:44:01] [INFO] Nacitam zakladni systemove informace...
+[2025-04-17 07:44:06] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-17 07:44:15] [INFO] Uzivatel zvolil v menu moznost: 1
+[2025-04-17 07:44:15] [INFO] Zahajena funkce Start-WizardMode (Pruvodce nastavenim - navrat do menu).
+[2025-04-17 07:44:15] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete spustit pruvodce nastavenim? (A/N)'
+[2025-04-17 07:44:24] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-17 07:44:24] [INFO] Pruvodce - Krok 1: Instalace zakladnich aplikaci
+[2025-04-17 07:44:24] [INFO] Zahajena funkce Install-BasicApps (WinForms verze).
+[2025-04-17 07:44:24] [DEBUG] Pripraven seznam aplikaci k vyberu.
+[2025-04-17 07:44:27] [INFO] Uzivatel zrusil vyber v okne (Storno nebo zavreni).
+[2025-04-17 07:44:27] [WARN] Nebyly vybrany zadne aplikace nebo byla akce zrusena/selhala.
+[2025-04-17 07:44:35] [INFO] Pruvodce - Krok 2: Odinstalace aplikaci Windows
+[2025-04-17 07:44:35] [INFO] Zahajena funkce Uninstall-Bloatware (v5 - tlacitka Vse/Nic).
+[2025-04-17 07:44:35] [DEBUG] Pripraven rozsireny seznam aplikaci k vyberu pro odinstalaci (aktualizovany, bez diakritiky).
+[2025-04-17 07:44:39] [INFO] Uzivatel zrusil vyber aplikaci k odinstalaci (Storno nebo zavreni).
+[2025-04-17 07:44:39] [WARN] Nebyly vybrany zadne aplikace k odinstalaci nebo byla akce zrusena.
+[2025-04-17 07:44:40] [INFO] Pruvodce - Krok 3: Odinstalace Microsoft Edge
+[2025-04-17 07:44:40] [INFO] Zahajena funkce Uninstall-Edge.
+[2025-04-17 07:44:40] [DEBUG] Cekam na specificke potvrzeni: 'Pro potvrzeni odinstalace Edge napiste presne 'ANO EDGE' (VyĹľadovĂˇno: 'ANO EDGE')'
+[2025-04-17 07:44:45] [DEBUG] Uzivatel zadal: 'n'
+[2025-04-17 07:44:45] [WARN] Potvrzeni 'ANO EDGE' NEBYLO zadano spravne.
+[2025-04-17 07:44:45] [INFO] Odinstalace Edge zrusena uzivatelem.
+[2025-04-17 07:44:49] [INFO] Pruvodce - Krok 4: Otevreni stranek pro ovladace GPU
+[2025-04-17 07:44:49] [INFO] Zahajena funkce Show-DriverDownloadPages.
+[2025-04-17 07:44:49] [INFO] Detekuji GPU z: Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU
+[2025-04-17 07:44:49] [INFO] Detekovana NVIDIA GPU. Oteviram https://www.nvidia.com/en-us/drivers/
+[2025-04-17 07:44:50] [INFO] Detekovana Intel GPU. Oteviram https://www.intel.com/content/www/us/en/download-center/home.html
+[2025-04-17 07:44:52] [INFO] Ukoncena funkce Show-DriverDownloadPages.
+[2025-04-17 07:44:52] [INFO] Pruvodce nastavenim dokoncen.
+[2025-04-17 07:45:35] [INFO] Uzivatel zvolil v menu moznost: 10
+[2025-04-17 07:45:35] [INFO] Uzivatel zvolil konec skriptu. Ukoncuji.
+[2025-04-18 09:53:32] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-18 09:53:32] [INFO] Spoustim script: WindowsAppTool
+[2025-04-18 09:53:32] [DEBUG] Kontrola administratorskych prav...
+[2025-04-18 09:53:32] [INFO] Kontrola admin prav uspesna.
+[2025-04-18 09:53:33] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-18 09:53:33] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-18 09:53:34] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-18 09:53:34] [INFO] Nacitam zakladni systemove informace...
+[2025-04-18 09:53:40] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-18 09:53:46] [INFO] Uzivatel zvolil v menu moznost: 10
+[2025-04-18 09:53:46] [INFO] Zahajena funkce NastavitVzhledAChovani (v2 - vyber A/N).
+[2025-04-18 09:53:46] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete nastavit UAC na nejnizsi uroven (Nikdy neupozornovat)? (NEDOPORUCUJE SE!) (A/N)'
+[2025-04-18 09:54:03] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-18 09:54:03] [WARN] Uzivatel potvrdil zmenu nastaveni UAC.
+[2025-04-18 09:54:03] [WARN] REG: UAC [HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System - ConsentPromptBehaviorAdmin] nastaveno na 0 (Never Notify).
+[2025-04-18 09:54:04] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete nastavit Rezim Windows na TMAVY a Rezim Aplikaci na SVETLY? (A/N)'
+[2025-04-18 09:54:34] [DEBUG] Uzivatel odpovedel: 'a'
+[2025-04-18 09:54:34] [INFO] Uzivatel potvrdil zmenu barevnych rezimu.
+[2025-04-18 09:54:34] [INFO] REG: Vzhled [HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize - AppsUseLightTheme] nastaveno na 1 (Svetly).
+[2025-04-18 09:54:35] [INFO] REG: Vzhled [HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize - SystemUsesLightTheme] nastaveno na 0 (Tmavy).
+[2025-04-18 09:54:35] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete skryt tlacitka Vyhledavani, Zobrazeni ukolu a Widgety? (A/N)'
+[2025-04-18 09:54:45] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-18 09:54:45] [INFO] Uzivatel potvrdil zmenu nastaveni hlavniho panelu.
+[2025-04-18 09:54:45] [INFO] REG: Taskbar [HKCU:\Software\Microsoft\Windows\CurrentVersion\Search - SearchboxTaskbarMode] nastaveno na 0 (Skryto).
+[2025-04-18 09:54:46] [INFO] REG: Taskbar [HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced - TaskbarMn] nastaveno na 0 (Skryto).
+[2025-04-18 09:54:46] [ERROR] REG Chyba: Nepodarilo se nastavit TaskbarDa=0: Došlo k pokusu o provedení neautorizované operace.
+[2025-04-18 09:54:46] [ERROR] 
+! NEOCEKAVANA CHYBA SKRIPTU: Chyba pri skryvani Widgetu: Došlo k pokusu o provedení neautorizované operace. | Cil:  | Radek: 1138
+[2025-04-18 10:00:13] [INFO] ================ Zahajeni logovani skriptu ================
+[2025-04-18 10:00:13] [INFO] Spoustim script: WindowsAppTool
+[2025-04-18 10:00:13] [DEBUG] Kontrola administratorskych prav...
+[2025-04-18 10:00:13] [INFO] Kontrola admin prav uspesna.
+[2025-04-18 10:00:14] [INFO] Kontrola dostupnosti nastroje Winget...
+[2025-04-18 10:00:14] [INFO] Winget nalezen: C:\Users\boris\AppData\Local\Microsoft\WindowsApps\winget.exe
+[2025-04-18 10:00:14] [INFO] Nalezena verze Winget: v1.10.340
+[2025-04-18 10:00:14] [INFO] Nacitam zakladni systemove informace...
+[2025-04-18 10:00:20] [INFO] SysInfo: CPU=Intel(R) Core(TM) Ultra 7 155H | RAM=31.5 GB | GPU=Intel(R) Arc(TM) Graphics; NVIDIA GeForce RTX 4060 Laptop GPU | OS=Microsoft Windows 11 Home 2009 (Ver: 10.0.26100)
+[2025-04-18 10:00:24] [INFO] Uzivatel zvolil v menu moznost: 10
+[2025-04-18 10:00:24] [INFO] Zahajena funkce NastavitVzhledAChovani (v2.1 - oprava chyby TaskbarDa).
+[2025-04-18 10:00:25] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete nastavit UAC na nejnizsi uroven (Nikdy neupozornovat)? (NEDOPORUCUJE SE!) (A/N)'
+[2025-04-18 10:00:27] [DEBUG] Uzivatel odpovedel: 'n'
+[2025-04-18 10:00:27] [INFO] Nastaveni UAC preskoceno uzivatelem.
+[2025-04-18 10:00:27] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete nastavit Rezim Windows na TMAVY a Rezim Aplikaci na SVETLY? (A/N)'
+[2025-04-18 10:00:32] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-18 10:00:32] [INFO] Uzivatel potvrdil zmenu barevnych rezimu.
+[2025-04-18 10:00:32] [INFO] REG: Vzhled [HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize - AppsUseLightTheme] nastaveno na 1 (Svetly).
+[2025-04-18 10:00:32] [INFO] REG: Vzhled [HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize - SystemUsesLightTheme] nastaveno na 0 (Tmavy).
+[2025-04-18 10:00:32] [DEBUG] Cekam na potvrzeni uzivatele: 'Chcete skryt tlacitka Vyhledavani, Zobrazeni ukolu a Widgety? (A/N)'
+[2025-04-18 10:00:36] [DEBUG] Uzivatel odpovedel: 'A'
+[2025-04-18 10:00:36] [INFO] Uzivatel potvrdil zmenu nastaveni hlavniho panelu.
+[2025-04-18 10:00:36] [INFO] REG: Taskbar [HKCU:\Software\Microsoft\Windows\CurrentVersion\Search - SearchboxTaskbarMode] nastaveno na 0 (Skryto).
+[2025-04-18 10:00:37] [INFO] REG: Taskbar [HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced - TaskbarMn] nastaveno na 0 (Skryto).
+[2025-04-18 10:00:37] [ERROR] REG Chyba: Nepodarilo se nastavit TaskbarDa=0 (pravdepodobne opravneni nebo GPO).
+[2025-04-18 10:00:37] [INFO] Funkce NastavitVzhledAChovani dokoncena. Byl upozornen na nutnost restartu.

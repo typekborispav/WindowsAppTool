@@ -885,6 +885,158 @@ function Show-DriverDownloadPages {
 
     Write-Log "Ukoncena funkce Show-DriverDownloadPages." "INFO" -NoConsole
 }
+
+# Funkce pro upravu vybranych nastaveni Windows (Vzhled, Chovani - s vyberem A/N pro kazdou sekci)
+function NastavitVzhledAChovani {
+    Clear-Host; Write-Log "Zahajena funkce NastavitVzhledAChovani (v2.1 - oprava chyby TaskbarDa)." "INFO" -NoConsole # Bez diakritiky
+    Write-Host "============================================================" -ForegroundColor Cyan
+    Write-Host "         Uprava vybranych nastaveni Vzhledu a Chovani" -ForegroundColor Cyan # Bez diakritiky
+    Write-Host "============================================================" -ForegroundColor Cyan
+    Write-Host
+    Write-Host "Tato funkce vam umozni upravit nasledujici nastaveni:" # Bez diakritiky
+    Write-Host "  - UAC (Rizeni uzivatelskych uctu) - Nastaveni na nejnizsi uroven." # Bez diakritiky
+    Write-Host "    /!\\ VAROVANI: Toto snizuje zabezpeceni systemu! /!\\" -ForegroundColor Red # Bez diakritiky
+    Write-Host "  - Barevne rezimy - Rezim Windows na TMAVY, Rezim Aplikaci na SVETLY." # Bez diakritiky
+    Write-Host "  - Hlavni panel - Skryti tlacitek Vyhledavani, Zobrazeni ukolu a Widgety." # Bez diakritiky
+    Write-Host
+    Write-Host "Pred kazdou skupinou zmen budete dotazani na potvrzeni (A/N)." # Bez diakritiky
+    Write-Host "Pro projeveni vsech provedenych zmen muze byt VYŽADOVÁN RESTART pocitace!" -ForegroundColor Yellow # Bez diakritiky
+    Write-Host
+
+    $restartNeeded = $false
+    $changeMade = $false
+
+    # --- Sekce UAC ---
+    Write-Host "`n--- Nastaveni UAC ---" -ForegroundColor Cyan
+    if (Get-Confirmation "Chcete nastavit UAC na nejnizsi uroven (Nikdy neupozornovat)? (NEDOPORUCUJE SE!)") { # Bez diakritiky
+        Write-Log "Uzivatel potvrdil zmenu nastaveni UAC." "WARN"
+        $uacPath = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
+        $uacValueName = 'ConsentPromptBehaviorAdmin'
+        try {
+            Write-Host "- Nastavuji UAC (ConsentPromptBehaviorAdmin = 0)..." -ForegroundColor Gray # Bez diakritiky
+            Set-ItemProperty -Path $uacPath -Name $uacValueName -Value 0 -Type DWord -Force -ErrorAction Stop
+            Write-Host "  OK (UAC nastaveno, vyzaduje restart)" -ForegroundColor Green # Bez diakritiky
+            Write-Log "REG: UAC [$uacPath - $uacValueName] nastaveno na 0 (Never Notify)." "WARN"
+            $restartNeeded = $true
+            $changeMade = $true
+        } catch {
+            Write-Log "REG Chyba: Nepodarilo se nastavit UAC [$uacPath - $uacValueName] na 0: $($_.Exception.Message)" "ERROR"
+            Write-Error "Chyba pri nastavovani UAC: $($_.Exception.Message)" # Bez diakritiky
+        }
+    } else {
+        Write-Log "Nastaveni UAC preskoceno uzivatelem." "INFO"
+        Write-Host "- Nastaveni UAC preskoceno." -ForegroundColor Yellow # Bez diakritiky
+    }
+    Start-Sleep -Milliseconds 500
+
+    # --- Sekce Barevne rezimy ---
+    Write-Host "`n--- Nastaveni Barevnych rezimu ---" -ForegroundColor Cyan # Bez diakritiky
+    if (Get-Confirmation "Chcete nastavit Rezim Windows na TMAVY a Rezim Aplikaci na SVETLY?") { # Bez diakritiky
+        Write-Log "Uzivatel potvrdil zmenu barevnych rezimu." "INFO"
+        $themePath = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize'
+        $colorChangeOk = $true
+        try {
+            Write-Host "- Nastavuji Rezim aplikaci na Svetly (AppsUseLightTheme = 1)..." -ForegroundColor Gray # Bez diakritiky
+            Set-ItemProperty -Path $themePath -Name 'AppsUseLightTheme' -Value 1 -Type DWord -Force -ErrorAction Stop
+            Write-Log "REG: Vzhled [$themePath - AppsUseLightTheme] nastaveno na 1 (Svetly)." "INFO"
+        } catch {
+            Write-Log "REG Chyba: Nepodarilo se nastavit AppsUseLightTheme=1: $($_.Exception.Message)" "ERROR"
+            Write-Error "Chyba pri nastavovani rezimu aplikaci: $($_.Exception.Message)" # Bez diakritiky
+            $colorChangeOk = $false
+        }
+        Start-Sleep -Milliseconds 200
+        try {
+            Write-Host "- Nastavuji Rezim Windows na Tmavy (SystemUsesLightTheme = 0)..." -ForegroundColor Gray # Bez diakritiky
+            Set-ItemProperty -Path $themePath -Name 'SystemUsesLightTheme' -Value 0 -Type DWord -Force -ErrorAction Stop
+            Write-Log "REG: Vzhled [$themePath - SystemUsesLightTheme] nastaveno na 0 (Tmavy)." "INFO"
+        } catch {
+            Write-Log "REG Chyba: Nepodarilo se nastavit SystemUsesLightTheme=0: $($_.Exception.Message)" "ERROR"
+            Write-Error "Chyba pri nastavovani rezimu Windows: $($_.Exception.Message)" # Bez diakritiky
+            $colorChangeOk = $false
+        }
+
+        if ($colorChangeOk) {
+             Write-Host "  OK (Barevne rezimy nastaveny)" -ForegroundColor Green # Bez diakritiky
+             $restartNeeded = $true
+             $changeMade = $true
+        }
+
+    } else {
+        Write-Log "Nastaveni barevnych rezimu preskoceno uzivatelem." "INFO"
+        Write-Host "- Nastaveni barevnych rezimu preskoceno." -ForegroundColor Yellow # Bez diakritiky
+    }
+    Start-Sleep -Milliseconds 500
+
+    # --- Sekce Hlavni panel ---
+    Write-Host "`n--- Nastaveni Hlavniho panelu ---" -ForegroundColor Cyan # Bez diakritiky
+    if (Get-Confirmation "Chcete skryt tlacitka Vyhledavani, Zobrazeni ukolu a Widgety?") { # Bez diakritiky
+        Write-Log "Uzivatel potvrdil zmenu nastaveni hlavniho panelu." "INFO"
+        $searchPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search'
+        $explorerAdvancedPath = 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        $taskbarChangeOk = $true
+        try {
+            Write-Host "- Skryvam Vyhledavani (SearchboxTaskbarMode = 0)..." -ForegroundColor Gray # Bez diakritiky
+            Set-ItemProperty -Path $searchPath -Name 'SearchboxTaskbarMode' -Value 0 -Type DWord -Force -ErrorAction Stop
+            Write-Log "REG: Taskbar [$searchPath - SearchboxTaskbarMode] nastaveno na 0 (Skryto)." "INFO"
+        } catch { Write-Log "REG Chyba: Nepodarilo se nastavit SearchboxTaskbarMode=0: $($_.Exception.Message)" "ERROR"; Write-Error "Chyba pri skryvani Vyhledavani: $($_.Exception.Message)"; $taskbarChangeOk = $false } # Bez diakritiky
+        Start-Sleep -Milliseconds 200
+        try {
+            Write-Host "- Skryvam Zobrazeni ukolu (TaskbarMn = 0)..." -ForegroundColor Gray # Bez diakritiky
+            Set-ItemProperty -Path $explorerAdvancedPath -Name 'TaskbarMn' -Value 0 -Type DWord -Force -ErrorAction Stop
+            Write-Log "REG: Taskbar [$explorerAdvancedPath - TaskbarMn] nastaveno na 0 (Skryto)." "INFO"
+        } catch { Write-Log "REG Chyba: Nepodarilo se nastavit TaskbarMn=0: $($_.Exception.Message)" "ERROR"; Write-Error "Chyba pri skryvani Zobrazeni ukolu: $($_.Exception.Message)"; $taskbarChangeOk = $false } # Bez diakritiky
+        Start-Sleep -Milliseconds 200
+
+        # *** ZDE JE ZMENA - ErrorAction SilentlyContinue a upraveny catch blok ***
+        try {
+            Write-Host "- Skryvam Widgety (TaskbarDa = 0)..." -ForegroundColor Gray # Bez diakritiky
+            Set-ItemProperty -Path $explorerAdvancedPath -Name 'TaskbarDa' -Value 0 -Type DWord -Force -ErrorAction SilentlyContinue # <- ZMENA ZDE
+            # Kontrola, zda prikaz vyvolal chybu, i kdyz jsme ji potlacili
+            if ($?) { # $? obsahuje stav uspesnosti posledniho prikazu
+                 Write-Log "REG: Taskbar [$explorerAdvancedPath - TaskbarDa] nastaveno na 0 (Skryto)." "INFO"
+            } else {
+                 # Pokud $? je $false, prikaz selhal i pres SilentlyContinue
+                 Write-Log "REG Chyba: Nepodarilo se nastavit TaskbarDa=0 (pravdepodobne opravneni nebo GPO)." "ERROR" # Bez diakritiky
+                 Write-Warning "  Nepodarilo se skryt Widgety - operace byla systemem blokovana." # Bez diakritiky
+                 $taskbarChangeOk = $false
+            }
+        } catch {
+            # Tento catch by se uz nemel provest kvuli SilentlyContinue, ale pro jistotu
+            Write-Log "REG Chyba (catch blok): Nepodarilo se nastavit TaskbarDa=0: $($_.Exception.Message)" "ERROR"
+            Write-Warning "  Nepodarilo se skryt Widgety: $($_.Exception.Message)" # Bez diakritiky
+            $taskbarChangeOk = $false
+        }
+        # *** KONEC ZMENY ***
+
+        if ($taskbarChangeOk) {
+             Write-Host "  OK (Nastaveni hlavniho panelu provedeno, krome pripadnych chyb vyse)" -ForegroundColor Green # Bez diakritiky
+             $restartNeeded = $true
+             $changeMade = $true
+        }
+
+    } else {
+        Write-Log "Nastaveni hlavniho panelu preskoceno uzivatelem." "INFO"
+        Write-Host "- Nastaveni hlavniho panelu preskoceno." -ForegroundColor Yellow # Bez diakritiky
+    }
+
+    # --- Zaverecne Upozorneni ---
+    Write-Host "`n------------------------------------------------------------"
+    if ($changeMade) {
+        Write-Host "Pozadovane upravy byly provedeny (nebo byl zaznamenan pokus)." -ForegroundColor Green # Bez diakritiky
+        if ($restartNeeded) {
+            Write-Host "Pro plne projeveni provedenych zmen je NUTNY RESTART pocitace!" -ForegroundColor Yellow -BackgroundColor Black # Bez diakritiky
+            Write-Log "Funkce NastavitVzhledAChovani dokoncena. Byl upozornen na nutnost restartu." "INFO"
+        } else {
+             Write-Host "Provedene zmeny nevyzaduji restart." -ForegroundColor Green # Bez diakritiky
+             Write-Log "Funkce NastavitVzhledAChovani dokoncena. Nebyly provedeny zmeny vyzadujici restart." "INFO"
+        }
+    } else {
+        Write-Host "Nebyly provedeny zadne zmeny nastaveni." -ForegroundColor Yellow # Bez diakritiky
+    }
+    Write-Host "------------------------------------------------------------"
+    # Zde uz nevolame Invoke-RestartAndRelaunchCheck, protoze tato verze kodu ji nema
+}
+
 # --- Hlavni cast skriptu ---
 
 Write-Log "================ Zahajeni logovani skriptu ================" "INFO"
@@ -966,7 +1118,7 @@ do {
     Write-Host "   WindowsAppTool (PowerShell verze)" -ForegroundColor Cyan
     Write-Host "==============================================" -ForegroundColor Cyan
     Write-Host "Vyberte pozadovanou akci:" # Bez diakritiky
-    Write-Host "  1. Pruvodce nastavenim" # << NOVA POLOZKA Bez diakritiky
+    Write-Host "  1. Pruvodce nastavenim" # Bez diakritiky
     Write-Host "  ---------------------------------"
     Write-Host "  2. Instalovat vybrane aplikace" # Drive 1 Bez diakritiky
     Write-Host "  3. Aktualizovat vsechny aplikace" # Drive 2 Bez diakritiky
@@ -976,26 +1128,28 @@ do {
     Write-Host "  7. Zobrazit typ licence Windows" # Drive 6 Bez diakritiky
     Write-Host "  8. Odinstalovat specifickou aplikaci (Vyber)" # Drive 7 Bez diakritiky
     Write-Host "  9. Otevrit stranky pro stazeni ovladacu GPU" # Drive 9 - zustava Bez diakritiky
-    Write-Host "  10. Konec" # << NOVA POLOZKA (Drive 8) Bez diakritiky
+    Write-Host "  10. Upravit vzhled a chovani Windows" # << NOVA POLOZKA Bez diakritiky
+    Write-Host "  11. Konec" # << Drive 10 (puvodne 8) Bez diakritiky
     Write-Host ""
-    $choice = Read-Host "Zadejte cislo volby (1-10)" # << ZMENA ROZSAHU Bez diakritiky
+    $choice = Read-Host "Zadejte cislo volby (1-11)" # << ZMENA ROZSAHU Bez diakritiky
     Write-Log "Uzivatel zvolil v menu moznost: $choice" "INFO"
 
     try {
         switch ($choice) {
-            "1" { Start-WizardMode }            # << NOVY CASE
-            "2" { Install-BasicApps }           # Drive 1
-            "3" { Update-AllApps }              # Drive 2
-            "4" { Update-Winget }               # Drive 3
-            "5" { Uninstall-Bloatware }         # Drive 4
-            "6" { Uninstall-Edge }              # Drive 5
-            "7" { Show-WindowsLicenseType }     # Drive 6
-            "8" { Uninstall-SelectedApps }      # Drive 7
-            "9" { Show-DriverDownloadPages }    # Drive 9 - zustava
-            "10" {                              # << ZMENA CISLA (Drive 8)
+            "1" { Start-WizardMode }
+            "2" { Install-BasicApps }
+            "3" { Update-AllApps }
+            "4" { Update-Winget }
+            "5" { Uninstall-Bloatware }
+            "6" { Uninstall-Edge }
+            "7" { Show-WindowsLicenseType }
+            "8" { Uninstall-SelectedApps }
+            "9" { Show-DriverDownloadPages }
+            "10" { NastavitVzhledAChovani }   # << NOVY CASE
+            "11" {                           # << ZMENA CISLA
                 Write-Log "Uzivatel zvolil konec skriptu. Ukoncuji." "INFO"
                 Write-Host "Skript ukoncen." # Bez diakritiky
-                exit 0 # Ukonci script a zavre okno
+                exit 0
             }
             default {
                 Write-Log "Neplatna volba menu: '$choice'." "WARN"
@@ -1004,7 +1158,7 @@ do {
             }
         }# end switch
 
-        # Pockame na uzivatele pred zobrazenim menu znovu (pokud jsme neukoncili pres exit nebo pruvodce)
+        # Pockame na uzivatele pred zobrazenim menu znovu (pokud jsme neukoncili pres exit)
          Read-Host "`nAkce dokoncena. Stisknete Enter pro navrat do hlavniho menu..." # Bez diakritiky
 
     } catch {
@@ -1014,7 +1168,6 @@ do {
          Read-Host "Stisknete Enter pro navrat do hlavniho menu..." # Bez diakritiky
     }
 
-} while (-not $exitLoop) # Smycka by technicky mela bezet porad, dokud se neukonci
-
+} while (-not $exitLoop)
 # --- Konec skriptu ---
 Write-Log "================ Ukonceni logovani skriptu ================" "INFO"
